@@ -26,6 +26,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+    annotationProcessor("org.projectlombok:lombok:1.18.42")
     implementation("org.projectlombok:lombok:1.18.42")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.3")
@@ -36,6 +37,7 @@ dependencies {
     implementation ("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.security:spring-security-crypto:7.1.0")
     implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("io.minio:minio:9.0.3")
 //    implementation("io.jsonwebtoken:jjwt-api:0.13.0")
 //    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.13.0")
 //    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")

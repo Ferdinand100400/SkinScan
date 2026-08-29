@@ -39,7 +39,4 @@ public class User {
         return phone;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

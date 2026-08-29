@@ -8,11 +8,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import ru.startup.skinscan.domain.service.AuthService;
+import ru.startup.skinscan.exception.IncorrectPasswordException;
+import ru.startup.skinscan.exception.NotFindUserException;
+import ru.startup.skinscan.security.exception.CustomAuthenticationEntryPoint;
 import ru.startup.skinscan.security.rateLimiting.RateLimiter;
 
 import java.io.IOException;
+import java.util.UUID;
 
 
 // Фильтр для применения Rate Limiting к запросам регистрации.
@@ -22,6 +28,8 @@ public class RateLimiterFilter extends OncePerRequestFilter {
     private static final Logger log = LoggerFactory.getLogger(RateLimiterFilter.class);
 
     private final RateLimiter rateLimiter;
+    private final AuthService authService;
+    private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
 
     @Value("${app.rateLimiting.register.limit:5}")
     private int registerLimit;
@@ -35,8 +43,10 @@ public class RateLimiterFilter extends OncePerRequestFilter {
     @Value("${app.rateLimiting.login.windowSeconds:60}")
     private long loginWindowSeconds;
 
-    public RateLimiterFilter(RateLimiter rateLimiter) {
+    public RateLimiterFilter(RateLimiter rateLimiter, AuthService authService, CustomAuthenticationEntryPoint customAuthenticationEntryPoint) {
         this.rateLimiter = rateLimiter;
+        this.authService = authService;
+        this.customAuthenticationEntryPoint = customAuthenticationEntryPoint;
     }
 
     @Override
@@ -47,6 +57,25 @@ public class RateLimiterFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
 
         String path = request.getRequestURI();
+
+        // Если не открытые эндпоинты, то читаем заголовок
+        if (!isPublicPath(path)) {
+            String header = request.getHeader("Authorization");
+            if (header == null || header.isEmpty()) {
+                customAuthenticationEntryPoint.commence(request, response, null);
+                return;
+            }
+            if (header.startsWith("Basic ")) {
+                header = header.substring(6);
+            }
+            try {
+                UUID id = authService.validate(header);
+                request.setAttribute("userId", id);
+            } catch (NotFindUserException | IncorrectPasswordException e) {
+                customAuthenticationEntryPoint.commence(request, response, null);
+                return;
+            }
+        }
 
         // Проверяем, нужно ли применять Rate Limiting к этому запросу
         if (!isRateLimitedPath(path)) {
@@ -99,6 +128,14 @@ public class RateLimiterFilter extends OncePerRequestFilter {
     // Определяем, нужно ли применять Rate Limiting к данному пути
     private boolean isRateLimitedPath(String path) {
         return path.matches("^/skinScan/(register|login).*$");
+    }
+
+    // Определяем, нужно ли применять Rate Limiting к данному пути
+    private boolean isPublicPath(String path) {
+        return path.matches("^/skinScan/(register|login|check-run).*$") ||
+                path.matches("^/swagger-ui/*$") ||
+                path.matches("^/docs") ||
+                path.matches("^/v3/api-docs/*$");
     }
 
     /**
