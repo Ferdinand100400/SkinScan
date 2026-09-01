@@ -16,6 +16,6 @@ public interface PhotoService {
     List<Photo> getAllMetaDataPhoto(UUID userId);
     String getPhotoAccessUrl(UUID photoId, UUID userId);
     Map<UUID, String> getAllPhotoAccessUrl(UUID userId);
-    UUID getPhotoIdByNameFile(String nameFile);
+    UUID getPhotoIdByNameFile(String nameFile, UUID userId);
 
 }

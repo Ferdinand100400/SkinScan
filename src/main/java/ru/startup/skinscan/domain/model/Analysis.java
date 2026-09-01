@@ -2,17 +2,19 @@ package ru.startup.skinscan.domain.model;
 
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.util.Map;
 import java.util.UUID;
 
 public class Analysis {
 
     private final UUID photoId;
-    private Object result;
+    private Map<String, Object> result;
     private StatusAnalysis status;
-    private final LocalDateTime requestedAt;
-    private LocalDateTime completedAt;
+    private final OffsetDateTime requestedAt;
+    private OffsetDateTime completedAt;
 
-    public Analysis(UUID photoId, Object result, StatusAnalysis status, LocalDateTime requestedAt, LocalDateTime completedAt) {
+    public Analysis(UUID photoId, Map<String, Object> result, StatusAnalysis status, OffsetDateTime requestedAt, OffsetDateTime completedAt) {
         this.photoId = photoId;
         this.result = result;
         this.status = status;
@@ -24,7 +26,7 @@ public class Analysis {
         return photoId;
     }
 
-    public Object result() {
+    public Map<String, Object> result() {
         return result;
     }
 
@@ -32,15 +34,15 @@ public class Analysis {
         return status;
     }
 
-    public LocalDateTime requestedAt() {
+    public OffsetDateTime requestedAt() {
         return requestedAt;
     }
 
-    public LocalDateTime completedAt() {
+    public OffsetDateTime completedAt() {
         return completedAt;
     }
 
-    public void setResult(Object result) {
+    public void setResult(Map<String, Object> result) {
         this.result = result;
     }
 
@@ -48,7 +50,7 @@ public class Analysis {
         this.status = status;
     }
 
-    public void setCompletedAt(LocalDateTime completedAt) {
+    public void setCompletedAt(OffsetDateTime completedAt) {
         this.completedAt = completedAt;
     }
 }

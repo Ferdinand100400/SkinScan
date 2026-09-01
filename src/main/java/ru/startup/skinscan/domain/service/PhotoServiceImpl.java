@@ -37,6 +37,10 @@ public class PhotoServiceImpl implements PhotoService {
     @Transactional
     @Override
     public UUID upload(MultipartFile file, UUID userId) {
+        try {
+            getPhotoIdByNameFile(file.getOriginalFilename(), userId);
+            throw new PhotoWithNameAlreadyExistsException(file.getOriginalFilename());
+        } catch (NotFindPhotoInBDException | NotAccessToPhotoForUserException ignored) {}
         String storagePath = generateStoragePath(userId, file.getOriginalFilename());
         try {
             String savedPath = fileStorageService.save(
@@ -74,8 +78,8 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public UUID getPhotoIdByNameFile(String nameFile) {
-        UUID id = photoRepo.findByName(nameFile)
+    public UUID getPhotoIdByNameFile(String nameFile, UUID userId) {
+        UUID id = photoRepo.findByNameForUserId(nameFile, userId)
                 .orElseThrow(() -> new NotFindPhotoInBDException(null))
                 .id();
         log.info("Получено id {} фото с именем {}", id, nameFile);
@@ -123,7 +127,7 @@ public class PhotoServiceImpl implements PhotoService {
                         photo.storageFilePath(),
                         Duration.ofMinutes(5)
                 );
-                UUID photoId = getPhotoIdByNameFile(photo.fileName());
+                UUID photoId = getPhotoIdByNameFile(photo.fileName(), userId);
                 photosUrl.put(photoId, signedUrl);
             }
         }

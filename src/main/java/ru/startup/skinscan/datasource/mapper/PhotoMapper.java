@@ -5,7 +5,7 @@ import ru.startup.skinscan.domain.model.Photo;
 import ru.startup.skinscan.domain.model.StatusPhoto;
 import ru.startup.skinscan.exception.MismatchBDWithDtoException;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 public class PhotoMapper {
@@ -21,7 +21,7 @@ public class PhotoMapper {
         );
     }
 
-    public static PhotoEntity dtoToEntity(Photo photo, LocalDateTime updatedAt) {
+    public static PhotoEntity dtoToEntity(Photo photo, OffsetDateTime updatedAt) {
         PhotoEntity entity = dtoToEntity(photo);
         entity.setUpdatedAt(updatedAt);
         return entity;

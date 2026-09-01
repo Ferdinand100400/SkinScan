@@ -22,6 +22,7 @@ public interface PhotoController {
     @ApiResponses({
             @ApiResponse(responseCode = "202", description = "Фотография успешно сохранена и началась обработка"),
             @ApiResponse(responseCode = "400", description = "Ошибка валидации, а также неверный формат фотографии или превышен размер файла"),
+            @ApiResponse(responseCode = "409", description = "Фото с таким именем уже существует"),
             @ApiResponse(responseCode = "401", description = "Необходима аутентификация, неверный пароль или логин"),
             @ApiResponse(responseCode = "500", description = "Ошибка добавления файла на стороне файловой системы"),
     })

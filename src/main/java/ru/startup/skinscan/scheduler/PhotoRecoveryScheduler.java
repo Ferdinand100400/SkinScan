@@ -13,7 +13,7 @@ import ru.startup.skinscan.domain.model.Photo;
 import ru.startup.skinscan.domain.model.StatusPhoto;
 import ru.startup.skinscan.domain.service.PhotoProcessingExecutor;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -46,8 +46,7 @@ public class PhotoRecoveryScheduler {
         log.debug("Запуск проверки и обработки зависших фотографий");
         try {
             // Находим время, до которого фото считается зависшим
-            LocalDateTime threshold = LocalDateTime.now()
-                    .minusMinutes(stuckThresholdMinutes);
+            OffsetDateTime threshold = OffsetDateTime.now().minusMinutes(stuckThresholdMinutes);
 
             // Ищем фото в статусе PROCESSING дольше порога
             List<Photo> stuckPhotos = PhotoMapper.entityListToDtoList(
@@ -72,7 +71,7 @@ public class PhotoRecoveryScheduler {
                     recoverPhoto(photo);
                     processedCount++;
                 } catch (Exception e) {
-                    log.error("Ошибка обработки фото: {}", photoRepo.findIdByName(photo.fileName()), e);
+                    log.error("Ошибка обработки фото: {}", photoRepo.findIdByNameForUserId(photo.fileName(), photo.userId()), e);
                 }
             }
 
@@ -84,7 +83,7 @@ public class PhotoRecoveryScheduler {
 
      // Восстанавливает одно фото. Проверяет, не было ли фото уже обработано другим экземпляром, если нет — перезапускает обработку.
     private void recoverPhoto(Photo photo) {
-        UUID photoId = photoRepo.findIdByName(photo.fileName()).get();
+        UUID photoId = photoRepo.findIdByNameForUserId(photo.fileName(), photo.userId()).get();
         log.warn("Обработка фото: {} начато", photoId);
         // Обновляем счетчик попыток
         int retryCount = photo.retryCount() + 1;
@@ -93,7 +92,7 @@ public class PhotoRecoveryScheduler {
         // Если попыток слишком много, помечаем как ERROR
         if (retryCount > 5) {
             photo.setStatus(StatusPhoto.ERROR);
-            photoRepo.save(PhotoMapper.dtoToEntity(photo, LocalDateTime.now()));
+            photoRepo.save(PhotoMapper.dtoToEntity(photo, OffsetDateTime.now()));
             log.error("Фото {} не удалось обработать {} раз", photoId, retryCount);
             return;
         }

@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Entity
@@ -28,16 +28,16 @@ public class UserEntity {
     private String phone;
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    private OffsetDateTime createdAt;
 
     @Setter
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    private OffsetDateTime updatedAt;
 
     public UserEntity() {
     }
 
-    public UserEntity(UUID id, String login, String password, String email, String phone, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserEntity(UUID id, String login, String password, String email, String phone, OffsetDateTime createdAt, OffsetDateTime updatedAt) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -48,7 +48,7 @@ public class UserEntity {
     }
 
     public UserEntity(String login, String password, String email, String phone) {
-        this(UUID.randomUUID(), login, password, email, phone, LocalDateTime.now(), LocalDateTime.now());
+        this(UUID.randomUUID(), login, password, email, phone, OffsetDateTime.now(), OffsetDateTime.now());
     }
 
     public UUID id() {
@@ -69,5 +69,13 @@ public class UserEntity {
 
     public String phone() {
         return phone;
+    }
+
+    public OffsetDateTime createdAt() {
+        return createdAt;
+    }
+
+    public OffsetDateTime updatedAt() {
+        return updatedAt;
     }
 }

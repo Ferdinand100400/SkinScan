@@ -172,7 +172,7 @@ public class LocalFileStorageService implements FileStorageService {
     @Override
     public String getUrl(String path) {
         validatePath(path);
-        return "/skinScan/photos/" + path;
+        return basePath + PATH_SEPARATOR + path;
     }
 
     @Override
@@ -198,19 +198,42 @@ public class LocalFileStorageService implements FileStorageService {
         }
     }
 
+//    @Override
+//    public String getMimeType(String path) {
+//        validatePath(path);
+//        Path filePath = resolvePath(path);
+//        if (!Files.exists(filePath)) {
+//            return "unknown";
+//        }
+//        try {
+//            String mimeType = Files.probeContentType(filePath);
+//            return mimeType != null ? mimeType : "unknown";
+//        } catch (IOException e) {
+//            log.warn("Ошибка получения типа файла по пути: {}", path, e);
+//            return "unknown";
+//        }
+//    }
+
     @Override
     public String getMimeType(String path) {
-        validatePath(path);
-        Path filePath = resolvePath(path);
-        if (!Files.exists(filePath)) {
-            return "Unknown";
+        if (path == null) {
+            return "unknown";
         }
-        try {
-            String mimeType = Files.probeContentType(filePath);
-            return mimeType != null ? mimeType : "Unknown";
-        } catch (IOException e) {
-            log.warn("Ошибка получения типа файла по пути: {}", path, e);
-            return "Unknown";
+        String lowerPath = path.toLowerCase();
+        if (lowerPath.endsWith(".jpg") || lowerPath.endsWith(".jpeg")) {
+            return "image/jpeg";
+        } else if (lowerPath.endsWith(".png")) {
+            return "image/png";
+        } else if (lowerPath.endsWith(".gif")) {
+            return "image/gif";
+        } else if (lowerPath.endsWith(".webp")) {
+            return "image/webp";
+        } else if (lowerPath.endsWith(".bmp")) {
+            return "image/bmp";
+        } else if (lowerPath.endsWith(".svg")) {
+            return "image/svg+xml";
+        } else {
+            return "unknown";
         }
     }
 

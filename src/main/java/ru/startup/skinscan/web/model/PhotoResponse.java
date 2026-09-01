@@ -6,8 +6,11 @@ import java.util.UUID;
 
 public class PhotoResponse {
 
+    @JsonProperty
     private final UUID id;
+    @JsonProperty
     private final String status;
+    @JsonProperty
     private final String links;
 
     @JsonProperty("size_file")

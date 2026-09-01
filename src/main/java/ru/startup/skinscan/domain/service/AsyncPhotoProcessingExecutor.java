@@ -1,13 +1,11 @@
 package ru.startup.skinscan.domain.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import ru.startup.skinscan.ML.MLClient;
 import ru.startup.skinscan.ML.MLRequest;
 import ru.startup.skinscan.ML.MLResponse;
@@ -23,7 +21,10 @@ import ru.startup.skinscan.exception.MLServiceException;
 import ru.startup.skinscan.exception.NotFindPhotoInBDException;
 
 import java.io.InputStream;
-import java.time.LocalDateTime;
+import java.lang.reflect.Field;
+import java.time.OffsetDateTime;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -67,7 +68,7 @@ public class AsyncPhotoProcessingExecutor implements PhotoProcessingExecutor {
             }
             // Обновляем статус на PROCESSING
             photo.setStatus(StatusPhoto.PROCESSING);
-            photoRepo.updateStatus(photoId, photo.status().status(), LocalDateTime.now());
+            photoRepo.updateStatus(photoId, photo.status().status(), OffsetDateTime.now());
             log.info("Сменен статус фото {} на PROCESSING", photoId);
 
             // Создаем запись анализа
@@ -75,8 +76,8 @@ public class AsyncPhotoProcessingExecutor implements PhotoProcessingExecutor {
                     photoId,
                     null,
                     StatusAnalysis.IN_PROGRESS,
-                    LocalDateTime.now(),
-                    LocalDateTime.now()
+                    OffsetDateTime.now(),
+                    OffsetDateTime.now()
             );
             UUID analysisId = analysisRepo.save(AnalysisMapper.dtoToEntity(analysis)).id();
 
@@ -122,17 +123,14 @@ public class AsyncPhotoProcessingExecutor implements PhotoProcessingExecutor {
             }
 
             // Сохраняем результат анализа
-            System.out.println("Статус фото");
             analysis.setStatus(StatusAnalysis.COMPLETED);
-            analysis.setResult(mlResponse.result());
-            analysis.setCompletedAt(LocalDateTime.now());
+            analysis.setResult(convertObjToMap(mlResponse.result()));
+            analysis.setCompletedAt(OffsetDateTime.now());
             analysisRepo.update(analysisId, analysis.result(), analysis.status().status(), analysis.completedAt());
 
-            System.out.println("Статус фото обновлен");
             // Обновляем статус фото
             photo.setStatus(StatusPhoto.ANALYZED);
-            System.out.println("!!!!");
-            photoRepo.updateStatus(photoId, photo.status().status(), LocalDateTime.now());
+            photoRepo.updateStatus(photoId, photo.status().status(), OffsetDateTime.now());
             log.info("Анализ фото {} успешно завершен", photoId);
 
         } catch (MLServiceException e) {
@@ -148,14 +146,14 @@ public class AsyncPhotoProcessingExecutor implements PhotoProcessingExecutor {
             log.error("ML ошибка: неизвестное фото {}", e.getMessage());
             return;
         }
-        UUID photoId = photoRepo.findIdByName(photo.fileName()).get();
+        UUID photoId = photoRepo.findIdByNameForUserId(photo.fileName(), photo.userId()).get();
         log.error("В процессе обработки фото {} возникла ошибка ML сервиса: {}", photoId, e.getMessage(), e);
 
         try {
             // Обновляем анализ
             if (analysis != null) {
                 analysis.setStatus(StatusAnalysis.FAILED);
-                analysis.setCompletedAt(LocalDateTime.now());
+                analysis.setCompletedAt(OffsetDateTime.now());
                 UUID analysisId = analysisRepo.findByPhotoId(photoId).get().id();
                 analysisRepo.updateStatus(analysisId, analysis.status().status(), analysis.completedAt());
             }
@@ -173,7 +171,7 @@ public class AsyncPhotoProcessingExecutor implements PhotoProcessingExecutor {
                 photo.setStatus(StatusPhoto.ERROR);
                 log.error("Фото {} не удалось проанализировать, кол-во попыток {}", photoId, retryCount);
             }
-            photoRepo.updateStatus(photoId, photo.status().status(), LocalDateTime.now());
+            photoRepo.updateStatus(photoId, photo.status().status(), OffsetDateTime.now());
         } catch (Exception ex) {
             log.error("Ошибка обработчика ошибок ML для фото: {}", photoId, ex);
         }
@@ -185,16 +183,16 @@ public class AsyncPhotoProcessingExecutor implements PhotoProcessingExecutor {
             log.error("Неизвестная ошибка и фото: ", e);
             return;
         }
-        UUID photoId = photoRepo.findIdByName(photo.fileName()).get();
+        UUID photoId = photoRepo.findIdByNameForUserId(photo.fileName(), photo.userId()).get();
         log.error("В процессе обработки фото {} возникла неизвестная ошибка: ", photoId, e);
         try {
             // Помечаем фото как ERROR
             photo.setStatus(StatusPhoto.ERROR);
-            photoRepo.updateStatus(photoId, photo.status().status(), LocalDateTime.now());
+            photoRepo.updateStatus(photoId, photo.status().status(), OffsetDateTime.now());
             // Обновляем анализ
             if (analysis != null) {
                 analysis.setStatus(StatusAnalysis.FAILED);
-                analysis.setCompletedAt(LocalDateTime.now());
+                analysis.setCompletedAt(OffsetDateTime.now());
                 UUID analysisId = analysisRepo.findByPhotoId(photoId).get().id();
                 analysisRepo.updateStatus(analysisId, analysis.status().status(), analysis.completedAt());
             }
@@ -202,5 +200,23 @@ public class AsyncPhotoProcessingExecutor implements PhotoProcessingExecutor {
         } catch (Exception ex) {
             log.error("Ошибка обработчика общих ошибок для фото: {}", photoId, ex);
         }
+    }
+
+    // Конвертирует из объекта (Result) в Map для последующего формирования Json
+    private static Map<String, Object> convertObjToMap(Object obj) {
+        Map<String, Object> map = new LinkedHashMap<>();
+        try {
+            for (Field field : obj.getClass().getDeclaredFields()) {
+                JsonProperty annotation = field.getAnnotation(JsonProperty.class);
+                String jsonName = (annotation != null && !annotation.value().isEmpty())
+                        ? annotation.value()
+                        : field.getName();
+                field.setAccessible(true);
+                map.put(jsonName, field.get(obj));
+            }
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Ошибка получения значений полей класса Result", e);
+        }
+        return map;
     }
 }

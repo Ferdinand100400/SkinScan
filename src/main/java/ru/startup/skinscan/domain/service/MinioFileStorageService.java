@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import ru.startup.skinscan.exception.StorageException;
+import ru.startup.skinscan.exception.UnknownMimeTypePhotoException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -195,7 +196,10 @@ public class MinioFileStorageService implements FileStorageService {
 
             log.info("Файл сохранен в MinIO: {}, с размером: {} байт", path, stat.size());
             return path;
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
+            throw new UnknownMimeTypePhotoException(getMimeTypeFromPath(path));
+        }
+        catch (Exception e) {
             log.error("Ошибка сохранения файла в MinIO: {}", path, e);
             throw wrapException(e, path);
         } finally {
@@ -362,7 +366,7 @@ public class MinioFileStorageService implements FileStorageService {
     // Определяет MIME-тип по расширению файла
     private String getMimeTypeFromPath(String path) {
         if (path == null) {
-            return "Unknown";
+            return "unknown";
         }
         String lowerPath = path.toLowerCase();
         if (lowerPath.endsWith(".jpg") || lowerPath.endsWith(".jpeg")) {
@@ -378,7 +382,7 @@ public class MinioFileStorageService implements FileStorageService {
         } else if (lowerPath.endsWith(".svg")) {
             return "image/svg+xml";
         } else {
-            return "Unknown";
+            return "unknown";
         }
     }
 

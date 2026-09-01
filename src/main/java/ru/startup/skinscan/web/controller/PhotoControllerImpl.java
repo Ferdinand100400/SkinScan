@@ -32,6 +32,10 @@ public class PhotoControllerImpl implements PhotoController {
             return ResponseEntity
                     .status(HttpStatus.ACCEPTED)
                     .body(photoId);
+        } catch (PhotoWithNameAlreadyExistsException e) {
+            return ResponseEntity
+                    .status(HttpStatus.CONFLICT)
+                    .body(e.getMessage());
         } catch (LimitPhotoSizeException | UnknownMimeTypePhotoException e) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
@@ -86,7 +90,7 @@ public class PhotoControllerImpl implements PhotoController {
     @Override
     public ResponseEntity<?> getPhotosByName(String nameFile, UUID userId) {
         try {
-            UUID photoId = photoService.getPhotoIdByNameFile(nameFile);
+            UUID photoId = photoService.getPhotoIdByNameFile(nameFile, userId);
             return getPhotosById(photoId, userId);
         } catch (NotFindPhotoInBDException e) {
             return ResponseEntity

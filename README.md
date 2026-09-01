@@ -72,6 +72,15 @@ GRANT ALL PRIVILEGES ON DATABASE skinScan_db TO skinScan_user;
 ```
 После запуска сервер будет доступен по адресу: `http://localhost:8080`.
 
+Для запуска MinIO через Docker, необходимо запустить в докере MinIO
+```bash
+docker run -d -p 9000:9000 -p 9001:9001 \
+  -e MINIO_ROOT_USER=minioadmin \
+  -e MINIO_ROOT_PASSWORD=minioadmin \
+  minio/minio server /data --console-address ":9001"
+```
+И запустить приложение с профилем `minio`.
+
 **Проверка успешности:**
 - Запрос `GET /skinScan/check-run` должен вернуть статус, время запроса, текущее время и запуска приложения.
 - Swagger-документация доступна: `http://localhost:8080/swagger-ui.html`.
@@ -147,6 +156,7 @@ GRANT ALL PRIVILEGES ON DATABASE skinScan_db TO skinScan_user;
 - **Ответ:** `202 Accepted` с полем: `id`.
 - **Ошибки:**
     - `400 Bad Request` — Ошибка валидации, а также неверный формат фотографии или превышен размер файла.
+    - `409 Conflict` — Фото с таким именем уже существует.
     - `401 Unauthorized` — Необходима аутентификация, неверный пароль или логин.
     - `500 Internal Server Error` — Ошибка добавления файла на стороне файловой системы.
 - Файл сохраняется в хранилище (локальная файловая система или MinIO - выбор через профили). 

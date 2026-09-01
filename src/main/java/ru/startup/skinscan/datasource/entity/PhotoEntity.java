@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Entity
@@ -34,16 +34,16 @@ public class PhotoEntity {
     private String status;
 
     @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+    private OffsetDateTime createdAt;
 
     @Setter
     @Column(name = "updated_at", nullable = false)
-    private LocalDateTime updatedAt;
+    private OffsetDateTime updatedAt;
 
     public PhotoEntity() {
     }
 
-    public PhotoEntity(UUID id, UUID userId, String fileName, String storageFilePath, Long fileSizeBytes, String mimeType, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public PhotoEntity(UUID id, UUID userId, String fileName, String storageFilePath, Long fileSizeBytes, String mimeType, String status, OffsetDateTime createdAt, OffsetDateTime updatedAt) {
         this.id = id;
         this.userId = userId;
         this.fileName = fileName;
@@ -56,7 +56,7 @@ public class PhotoEntity {
     }
 
     public PhotoEntity(UUID userId, String fileName, String storageFilePath, Long fileSizeBytes, String mimeType, String status) {
-        this(UUID.randomUUID(), userId, fileName, storageFilePath, fileSizeBytes, mimeType, status, LocalDateTime.now(), LocalDateTime.now());
+        this(UUID.randomUUID(), userId, fileName, storageFilePath, fileSizeBytes, mimeType, status, OffsetDateTime.now(), OffsetDateTime.now());
     }
 
     public UUID id() {
@@ -87,11 +87,11 @@ public class PhotoEntity {
         return status;
     }
 
-    public LocalDateTime createdAt() {
+    public OffsetDateTime createdAt() {
         return createdAt;
     }
 
-    public LocalDateTime updatedAt() {
+    public OffsetDateTime updatedAt() {
         return updatedAt;
     }
 }

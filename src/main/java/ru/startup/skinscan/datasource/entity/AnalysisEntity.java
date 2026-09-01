@@ -2,9 +2,11 @@ package ru.startup.skinscan.datasource.entity;
 
 import jakarta.persistence.*;
 import lombok.Setter;
-import ru.startup.skinscan.datasource.mapper.JsonAnalysisResultConverter;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.util.Map;
 import java.util.UUID;
 
 @Entity
@@ -17,21 +19,20 @@ public class AnalysisEntity {
     @Column(name = "photo_id", nullable = false)
     private UUID photoId;
 
-//    @Type(JsonType.class)
-    @Convert(converter = JsonAnalysisResultConverter.class)
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(name = "result", columnDefinition = "jsonb")
-    private Object result;
+    private Map<String, Object> result;
 
     private String status;
 
     @Column(name = "requested_at")
-    private LocalDateTime requestedAt;
+    private OffsetDateTime requestedAt;
 
     @Setter
     @Column(name = "completed_at")
-    private LocalDateTime completedAt;
+    private OffsetDateTime completedAt;
 
-    public AnalysisEntity(UUID id, UUID photoId, Object result, String status, LocalDateTime requestedAt, LocalDateTime completedAt) {
+    public AnalysisEntity(UUID id, UUID photoId, Map<String, Object> result, String status, OffsetDateTime requestedAt, OffsetDateTime completedAt) {
         this.id = id;
         this.photoId = photoId;
         this.result = result;
@@ -40,7 +41,7 @@ public class AnalysisEntity {
         this.completedAt = completedAt;
     }
 
-    public AnalysisEntity(UUID photoId, Object result, String status, LocalDateTime requestedAt, LocalDateTime completedAt) {
+    public AnalysisEntity(UUID photoId, Map<String, Object> result, String status, OffsetDateTime requestedAt, OffsetDateTime completedAt) {
         this(UUID.randomUUID(), photoId, result, status, requestedAt, completedAt);
     }
 
@@ -55,7 +56,7 @@ public class AnalysisEntity {
         return photoId;
     }
 
-    public Object result() {
+    public Map<String, Object> result() {
         return result;
     }
 
@@ -63,11 +64,11 @@ public class AnalysisEntity {
         return status;
     }
 
-    public LocalDateTime requestedAt() {
+    public OffsetDateTime requestedAt() {
         return requestedAt;
     }
 
-    public LocalDateTime completedAt() {
+    public OffsetDateTime completedAt() {
         return completedAt;
     }
 }

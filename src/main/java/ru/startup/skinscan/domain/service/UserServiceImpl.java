@@ -10,7 +10,7 @@ import ru.startup.skinscan.exception.IncorrectPasswordException;
 import ru.startup.skinscan.exception.NotFindUserException;
 import ru.startup.skinscan.exception.UserAlreadyExistsException;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Service
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
                     userRepo.findByLogin(user.login()).orElseThrow(() -> new NotFindUserException(user.login()))
             );
             if (!passwordEncoder.matches(user.password(), curUser.password())) throw new IncorrectPasswordException();
-            if (userRepo.update(user.login(), curUser.password(), user.email(), user.phone(), LocalDateTime.now()) == 1)
+            if (userRepo.update(user.login(), curUser.password(), user.email(), user.phone(), OffsetDateTime.now()) == 1)
                 return userRepo.findIdByLogin(user.login()).orElseThrow();
             throw new RuntimeException("Ошибка обновления пользователя");
         } catch (NotFindUserException e) {
@@ -78,7 +78,7 @@ public class UserServiceImpl implements UserService {
                 throw new IncorrectPasswordException();
             }
             String encodedNewPassword = passwordEncoder.encode(newPassword);
-            if (userRepo.updatePassword(idUser, encodedNewPassword, LocalDateTime.now()) == 1)
+            if (userRepo.updatePassword(idUser, encodedNewPassword, OffsetDateTime.now()) == 1)
                 return 1;
             throw new RuntimeException("Ошибка обновления пароля пользователя");
         } catch (NotFindUserException e) {

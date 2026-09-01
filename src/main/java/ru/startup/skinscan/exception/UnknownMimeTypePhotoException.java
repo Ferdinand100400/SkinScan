@@ -5,7 +5,7 @@ public class UnknownMimeTypePhotoException extends RuntimeException {
     private final String message;
 
     public UnknownMimeTypePhotoException(String mimeType) {
-        this.message = "Неизвестный тип файла: " + mimeType;
+        this.message = "Тип файла не поддерживается: " + mimeType;
         System.out.println(message);
     }
 
