@@ -34,7 +34,7 @@ public class PhotoControllerImpl implements PhotoController {
                     .body(photoId);
         } catch (PhotoWithNameAlreadyExistsException e) {
             return ResponseEntity
-                    .status(HttpStatus.CONFLICT)
+                    .status(HttpStatus.OK)
                     .body(e.getMessage());
         } catch (LimitPhotoSizeException | UnknownMimeTypePhotoException e) {
             return ResponseEntity

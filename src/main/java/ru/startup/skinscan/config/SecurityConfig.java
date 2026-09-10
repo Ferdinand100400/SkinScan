@@ -108,7 +108,8 @@ public class SecurityConfig {
                                 "/skinScan/check-run",
                                 "/swagger-ui/**",
                                 "/docs",
-                                "/v3/api-docs/**"
+                                "/v3/api-docs/**",
+                                "/error"
                         ).permitAll()
 
                         // Эндпоинты для администраторов
