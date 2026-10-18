@@ -26,9 +26,14 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
-    public ResponseEntity<?> update(UserRequest userRequest) {
+    public ResponseEntity<?> update(UserRequest userRequest, UUID loginUserId) {
         try {
-            UUID id = userService.updateUser(UserMapperWeb.requestToDto(userRequest));
+            UUID id = userService.findUserIdByLogin(userRequest.login());
+            if (!id.equals(loginUserId))
+                return ResponseEntity
+                        .status(HttpStatus.UNAUTHORIZED)
+                        .body("Нет прав для изменения данных другого пользователя");
+            userService.updateUser(UserMapperWeb.requestToDto(userRequest));
             return ResponseEntity.ok(id);
         } catch (NotFindUserException e) {
             return ResponseEntity
@@ -42,9 +47,13 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
-    public ResponseEntity<?> updatePassword(String login, PasswordUpdateRequest passwordUpdateRequest) {
+    public ResponseEntity<?> updatePassword(String login, PasswordUpdateRequest passwordUpdateRequest, UUID loginUserId) {
         try {
             UUID id = userService.findUserIdByLogin(login);
+            if (!id.equals(loginUserId))
+                return ResponseEntity
+                        .status(HttpStatus.UNAUTHORIZED)
+                        .body("Нет прав для изменения пароля другого пользователя");
             userService.updatePassword(id, passwordUpdateRequest.oldPassword(), passwordUpdateRequest.newPassword());
             return ResponseEntity.ok(id);
         } catch (NotFindUserException e) {

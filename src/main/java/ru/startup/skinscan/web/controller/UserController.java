@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import ru.startup.skinscan.web.model.PasswordUpdateRequest;
 import ru.startup.skinscan.web.model.UserRequest;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/skinScan/user")
 public interface UserController {
@@ -21,9 +23,9 @@ public interface UserController {
     @ApiResponses({
             @ApiResponse(responseCode = "201", description = "Данные пользователя успешно изменены"),
             @ApiResponse(responseCode = "400", description = "Ошибка валидации — не заданы логин или неверный email"),
-            @ApiResponse(responseCode = "401", description = "Неверный логин")
+            @ApiResponse(responseCode = "401", description = "Неверный логин или пароль. Нет доступа для пользователя")
     })
-    ResponseEntity<?> update(@RequestBody @Valid UserRequest userRequest);
+    ResponseEntity<?> update(@RequestBody @Valid UserRequest userRequest, @RequestAttribute("userId") UUID loginUserId);
 
     @PutMapping("/update/{login}")
     @Operation(
@@ -33,7 +35,7 @@ public interface UserController {
     @ApiResponses({
             @ApiResponse(responseCode = "201", description = "Пароль пользователя успешно изменен"),
             @ApiResponse(responseCode = "400", description = "Ошибка валидации — пароль не соответствует формату"),
-            @ApiResponse(responseCode = "401", description = "Неверный логин или старый пароль")
+            @ApiResponse(responseCode = "401", description = "Неверный логин или старый пароль. Нет доступа для пользователя")
     })
-    ResponseEntity<?> updatePassword(@PathVariable String login, @RequestBody @Valid PasswordUpdateRequest passwordUpdateRequest);
+    ResponseEntity<?> updatePassword(@PathVariable String login, @RequestBody @Valid PasswordUpdateRequest passwordUpdateRequest, @RequestAttribute("userId") UUID loginUserId);
 }

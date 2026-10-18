@@ -1,92 +1,622 @@
-2026-09-02 22:17:11.900 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2026-09-02 22:17:12.060 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 10648 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
-2026-09-02 22:17:12.063 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
-2026-09-02 22:17:16.142 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-09-02 22:17:16.762 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 542 ms. Found 3 JPA repository interfaces.
-2026-09-02 22:17:19.407 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2026-09-02 22:17:19.480 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-09-02 22:17:19.494 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-02 22:17:19.496 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
-2026-09-02 22:17:20.186 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-09-02 22:17:20.187 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8028 ms
-2026-09-02 22:17:20.332 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
-2026-09-02 22:17:21.441 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
-2026-09-02 22:17:21.442 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-10-18 22:36:34.457 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-10-18 22:36:34.561 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 80244 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
+2026-10-18 22:36:34.563 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
+2026-10-18 22:36:37.549 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-18 22:36:37.824 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 243 ms. Found 3 JPA repository interfaces.
+2026-10-18 22:36:40.295 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-10-18 22:36:40.372 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-18 22:36:40.383 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-18 22:36:40.384 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-10-18 22:36:41.304 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-18 22:36:41.309 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6624 ms
+2026-10-18 22:36:41.465 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
+2026-10-18 22:36:42.593 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2026-10-18 22:36:42.593 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
   context: ROOT
   delegate: true
 ----------> Parent Classloader:
 jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
  ...
-2026-09-02 22:17:21.444 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
-2026-09-02 22:17:21.445 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
-2026-09-02 22:17:21.446 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-10-18 22:36:42.593 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2026-10-18 22:36:42.593 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2026-10-18 22:36:42.596 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
   context: ROOT
   delegate: true
 ----------> Parent Classloader:
 jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
  ...
-2026-09-02 22:17:21.450 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
-2026-09-02 22:17:21.459 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
-2026-09-02 22:17:21.461 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
-2026-09-02 22:17:21.478 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
-2026-09-02 22:17:21.480 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
-2026-09-02 22:17:21.483 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
-2026-09-02 22:17:21.484 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
-2026-09-02 22:17:21.484 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
-2026-09-02 22:17:21.509 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
-2026-09-02 22:17:21.617 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-09-02 22:17:22.418 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1182413a
-2026-09-02 22:17:22.433 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-09-02 22:17:22.646 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
-2026-09-02 22:17:22.649 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
-2026-09-02 22:17:22.651 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
-2026-09-02 22:17:22.695 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
-2026-09-02 22:17:22.699 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
-2026-09-02 22:17:22.701 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
-2026-09-02 22:17:22.702 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
-2026-09-02 22:17:22.704 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
-2026-09-02 22:17:22.713 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
-2026-09-02 22:17:22.714 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
-2026-09-02 22:17:22.767 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
-2026-09-02 22:17:22.776 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
-2026-09-02 22:17:22.838 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
-2026-09-02 22:17:22.854 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
-2026-09-02 22:17:22.924 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
-2026-09-02 22:17:22.925 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
-2026-09-02 22:17:22.926 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
-2026-09-02 22:17:22.928 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
-2026-09-02 22:17:22.932 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
-2026-09-02 22:17:22.932 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
-2026-09-02 22:17:22.932 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
-2026-09-02 22:17:22.932 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
-2026-09-02 22:17:22.994 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.152s)
-2026-09-02 22:17:22.997 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
-2026-09-02 22:17:23.018 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
-2026-09-02 22:17:23.020 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
-2026-09-02 22:17:23.027 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2026-09-02 22:17:23.033 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 47 of 60M
-2026-09-02 22:17:23.195 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
-2026-09-02 22:17:23.323 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-09-02 22:17:23.790 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
-2026-09-02 22:17:23.799 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
-2026-09-02 22:17:27.126 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-09-02 22:17:31.425 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-09-02 22:17:31.435 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-09-02 22:17:32.303 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-09-02 22:17:35.213 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
-2026-09-02 22:17:36.154 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
-2026-09-02 22:17:36.329 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тест MinIO прошел успешно
-2026-09-02 22:17:36.341 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Бакет уже существует: myapp-photos
-2026-09-02 22:17:36.342 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий успешно завершена
-2026-09-02 22:17:36.607 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Photo Task Executor запущен: базовое кол-во потоков=5, максимальное кол-во потоков=10, размер очереди ожидания=100
-2026-09-02 22:17:36.617 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Recovery Task Executor запущен
-2026-09-02 22:17:37.095 [main] WARN  [N/A] [N/A] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-09-02 22:17:37.146 [main] DEBUG [N/A] [N/A] o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
-2026-09-02 22:17:38.026 [main] INFO  [N/A] [N/A] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2fb36d8d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35eac1dd, org.springframework.security.web.context.SecurityContextHolderFilter@38950d4b, org.springframework.security.web.header.HeaderWriterFilter@5683a326, org.springframework.web.filter.CorsFilter@639f5460, org.springframework.security.web.authentication.logout.LogoutFilter@fcd300e, ru.startup.skinscan.security.filter.RateLimiterFilter@71077d1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@32950acc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32fccfc2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62dfe32e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2e3fa7a7, org.springframework.security.web.session.SessionManagementFilter@28245839, org.springframework.security.web.access.ExceptionTranslationFilter@3514ea20, org.springframework.security.web.access.intercept.AuthorizationFilter@58fcb07b]
-2026-09-02 22:17:39.790 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-09-02 22:17:39.882 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2026-09-02 22:17:39.960 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Started Main in 29.109 seconds (process running for 29.954)
-2026-09-02 22:17:40.562 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:36:42.600 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
+2026-10-18 22:36:42.607 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
+2026-10-18 22:36:42.609 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
+2026-10-18 22:36:42.623 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
+2026-10-18 22:36:42.624 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
+2026-10-18 22:36:42.624 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
+2026-10-18 22:36:42.625 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
+2026-10-18 22:36:42.626 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2026-10-18 22:36:42.646 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
+2026-10-18 22:36:42.695 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-18 22:36:43.534 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6b09ce57
+2026-10-18 22:36:43.556 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-18 22:36:43.711 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
+2026-10-18 22:36:43.714 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
+2026-10-18 22:36:43.715 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
+2026-10-18 22:36:43.766 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
+2026-10-18 22:36:43.769 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
+2026-10-18 22:36:43.770 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
+2026-10-18 22:36:43.771 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
+2026-10-18 22:36:43.773 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
+2026-10-18 22:36:43.781 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2026-10-18 22:36:43.783 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2026-10-18 22:36:43.822 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-10-18 22:36:43.826 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2026-10-18 22:36:43.861 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
+2026-10-18 22:36:43.873 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:36:44.019 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:36:44.020 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:36:44.020 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:36:44.020 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:36:44.024 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:36:44.024 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:36:44.026 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:36:44.026 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:36:44.090 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.225s)
+2026-10-18 22:36:44.093 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
+2026-10-18 22:36:44.104 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:36:44.107 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+2026-10-18 22:36:44.110 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-18 22:36:44.116 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 33 of 58M
+2026-10-18 22:36:44.342 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2026-10-18 22:36:44.446 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-18 22:36:44.814 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
+2026-10-18 22:36:44.826 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2026-10-18 22:36:46.889 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-18 22:36:53.483 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-18 22:36:53.499 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:36:55.020 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-18 22:37:00.088 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
+2026-10-18 22:37:01.531 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
+2026-10-18 22:37:01.738 [main] ERROR [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Ошибка соединения с MinIO: java.net.ConnectException: Connection refused: getsockopt
+2026-10-18 22:37:01.785 [main] WARN  [N/A] [N/A] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asyncPhotoProcessingExecutor' defined in file [C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main\ru\startup\skinscan\domain\service\AsyncPhotoProcessingExecutor.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+2026-10-18 22:37:01.788 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:37:01.798 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-18 22:37:01.807 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-18 22:37:01.814 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-10-18 22:37:01.882 [main] INFO  [N/A] [N/A] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-18 22:37:01.935 [main] ERROR [N/A] [N/A] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asyncPhotoProcessingExecutor' defined in file [C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main\ru\startup\skinscan\domain\service\AsyncPhotoProcessingExecutor.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:794)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:236)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:558)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:739)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:441)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1316)
+	at ru.startup.skinscan.Main.main(Main.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1760)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:903)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	... 19 common frames omitted
+Caused by: ru.startup.skinscan.exception.StorageException: null
+	at ru.startup.skinscan.domain.service.MinioFileStorageService.init(MinioFileStorageService.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+	... 32 common frames omitted
+2026-10-18 22:37:54.681 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-10-18 22:37:54.716 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 90372 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
+2026-10-18 22:37:54.718 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
+2026-10-18 22:37:55.850 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-18 22:37:55.994 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 3 JPA repository interfaces.
+2026-10-18 22:37:58.557 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-10-18 22:37:58.594 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-18 22:37:58.600 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-18 22:37:58.601 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-10-18 22:37:58.944 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-18 22:37:58.944 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4178 ms
+2026-10-18 22:37:59.003 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
+2026-10-18 22:37:59.794 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2026-10-18 22:37:59.795 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:37:59.795 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2026-10-18 22:37:59.795 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2026-10-18 22:37:59.795 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:37:59.797 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
+2026-10-18 22:37:59.810 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
+2026-10-18 22:37:59.812 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
+2026-10-18 22:37:59.829 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
+2026-10-18 22:37:59.830 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
+2026-10-18 22:37:59.831 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
+2026-10-18 22:37:59.831 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
+2026-10-18 22:37:59.831 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2026-10-18 22:37:59.846 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
+2026-10-18 22:37:59.864 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-18 22:38:00.300 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1e56bc9b
+2026-10-18 22:38:00.302 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-18 22:38:00.336 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
+2026-10-18 22:38:00.338 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
+2026-10-18 22:38:00.338 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
+2026-10-18 22:38:00.344 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
+2026-10-18 22:38:00.344 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
+2026-10-18 22:38:00.346 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
+2026-10-18 22:38:00.346 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
+2026-10-18 22:38:00.346 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
+2026-10-18 22:38:00.347 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2026-10-18 22:38:00.347 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2026-10-18 22:38:00.355 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-10-18 22:38:00.357 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2026-10-18 22:38:00.382 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
+2026-10-18 22:38:00.389 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:38:00.410 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:38:00.411 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:38:00.412 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:38:00.413 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:38:00.415 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:38:00.415 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:38:00.415 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:38:00.416 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:38:00.486 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.101s)
+2026-10-18 22:38:00.492 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
+2026-10-18 22:38:00.542 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:38:00.546 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+2026-10-18 22:38:00.550 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-18 22:38:00.555 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 46 of 88M
+2026-10-18 22:38:00.793 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2026-10-18 22:38:00.921 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-18 22:38:01.144 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
+2026-10-18 22:38:01.162 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2026-10-18 22:38:03.529 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-18 22:38:09.358 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-18 22:38:09.373 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:38:10.626 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-18 22:38:14.225 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
+2026-10-18 22:38:15.598 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
+2026-10-18 22:38:15.912 [main] ERROR [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Ошибка соединения с MinIO: java.net.ConnectException: Connection refused: getsockopt
+2026-10-18 22:38:15.918 [main] WARN  [N/A] [N/A] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asyncPhotoProcessingExecutor' defined in file [C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main\ru\startup\skinscan\domain\service\AsyncPhotoProcessingExecutor.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+2026-10-18 22:38:15.921 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:38:15.931 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-18 22:38:15.948 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-18 22:38:15.964 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-10-18 22:38:16.041 [main] INFO  [N/A] [N/A] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-18 22:38:16.086 [main] ERROR [N/A] [N/A] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asyncPhotoProcessingExecutor' defined in file [C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main\ru\startup\skinscan\domain\service\AsyncPhotoProcessingExecutor.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:794)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:236)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:558)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:739)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:441)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1316)
+	at ru.startup.skinscan.Main.main(Main.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1760)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:903)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	... 19 common frames omitted
+Caused by: ru.startup.skinscan.exception.StorageException: null
+	at ru.startup.skinscan.domain.service.MinioFileStorageService.init(MinioFileStorageService.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+	... 32 common frames omitted
+2026-10-18 22:47:40.333 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-10-18 22:47:40.473 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 50776 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
+2026-10-18 22:47:40.479 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
+2026-10-18 22:47:43.259 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-18 22:47:43.584 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 294 ms. Found 3 JPA repository interfaces.
+2026-10-18 22:47:45.754 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-10-18 22:47:45.792 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-18 22:47:45.800 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-18 22:47:45.801 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-10-18 22:47:46.128 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-18 22:47:46.130 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5493 ms
+2026-10-18 22:47:46.195 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
+2026-10-18 22:47:47.018 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2026-10-18 22:47:47.020 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:47:47.021 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2026-10-18 22:47:47.021 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2026-10-18 22:47:47.023 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:47:47.026 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
+2026-10-18 22:47:47.031 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
+2026-10-18 22:47:47.032 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
+2026-10-18 22:47:47.038 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
+2026-10-18 22:47:47.038 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
+2026-10-18 22:47:47.039 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
+2026-10-18 22:47:47.039 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
+2026-10-18 22:47:47.039 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2026-10-18 22:47:47.052 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
+2026-10-18 22:47:47.078 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-18 22:47:47.929 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ad0bb4e
+2026-10-18 22:47:47.931 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-18 22:47:47.997 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
+2026-10-18 22:47:47.998 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
+2026-10-18 22:47:47.999 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
+2026-10-18 22:47:48.023 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
+2026-10-18 22:47:48.024 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
+2026-10-18 22:47:48.025 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
+2026-10-18 22:47:48.025 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
+2026-10-18 22:47:48.028 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
+2026-10-18 22:47:48.030 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2026-10-18 22:47:48.032 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2026-10-18 22:47:48.050 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-10-18 22:47:48.052 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2026-10-18 22:47:48.092 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
+2026-10-18 22:47:48.098 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:47:48.125 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:47:48.126 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:47:48.126 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:47:48.126 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:47:48.128 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:47:48.128 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:47:48.128 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:47:48.128 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:47:48.230 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.137s)
+2026-10-18 22:47:48.236 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
+2026-10-18 22:47:48.249 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:47:48.254 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+2026-10-18 22:47:48.261 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-18 22:47:48.269 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 45 of 66M
+2026-10-18 22:47:48.440 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2026-10-18 22:47:48.555 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-18 22:47:48.793 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
+2026-10-18 22:47:48.800 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2026-10-18 22:47:50.586 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-18 22:47:54.551 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-18 22:47:54.560 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:47:55.150 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-18 22:47:57.058 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
+2026-10-18 22:47:58.572 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
+2026-10-18 22:47:58.895 [main] ERROR [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Ошибка соединения с MinIO: java.net.ConnectException: Connection refused: getsockopt
+2026-10-18 22:47:58.904 [main] WARN  [N/A] [N/A] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asyncPhotoProcessingExecutor' defined in file [C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main\ru\startup\skinscan\domain\service\AsyncPhotoProcessingExecutor.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+2026-10-18 22:47:58.907 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:47:58.922 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-18 22:47:58.948 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-18 22:47:58.953 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-10-18 22:47:59.048 [main] INFO  [N/A] [N/A] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-18 22:47:59.182 [main] ERROR [N/A] [N/A] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asyncPhotoProcessingExecutor' defined in file [C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main\ru\startup\skinscan\domain\service\AsyncPhotoProcessingExecutor.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:794)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:236)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:558)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:739)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:441)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1316)
+	at ru.startup.skinscan.Main.main(Main.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1760)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:903)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	... 19 common frames omitted
+Caused by: ru.startup.skinscan.exception.StorageException: null
+	at ru.startup.skinscan.domain.service.MinioFileStorageService.init(MinioFileStorageService.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+	... 32 common frames omitted
+2026-10-18 22:48:41.587 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-10-18 22:48:41.633 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 45748 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
+2026-10-18 22:48:41.634 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
+2026-10-18 22:48:43.224 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-18 22:48:43.565 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 315 ms. Found 3 JPA repository interfaces.
+2026-10-18 22:48:46.693 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-10-18 22:48:46.749 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-18 22:48:46.764 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-18 22:48:46.766 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-10-18 22:48:47.628 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-18 22:48:47.632 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5928 ms
+2026-10-18 22:48:47.752 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
+2026-10-18 22:48:48.796 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2026-10-18 22:48:48.796 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:48:48.796 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2026-10-18 22:48:48.797 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2026-10-18 22:48:48.797 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:48:48.798 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
+2026-10-18 22:48:48.801 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
+2026-10-18 22:48:48.803 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
+2026-10-18 22:48:48.807 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
+2026-10-18 22:48:48.807 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
+2026-10-18 22:48:48.808 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
+2026-10-18 22:48:48.808 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
+2026-10-18 22:48:48.808 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2026-10-18 22:48:48.817 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
+2026-10-18 22:48:48.840 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-18 22:48:49.521 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@251a90ce
+2026-10-18 22:48:49.534 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-18 22:48:49.700 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
+2026-10-18 22:48:49.704 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
+2026-10-18 22:48:49.706 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
+2026-10-18 22:48:49.739 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
+2026-10-18 22:48:49.741 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
+2026-10-18 22:48:49.741 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
+2026-10-18 22:48:49.741 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
+2026-10-18 22:48:49.743 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
+2026-10-18 22:48:49.750 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2026-10-18 22:48:49.751 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2026-10-18 22:48:49.774 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-10-18 22:48:49.778 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2026-10-18 22:48:49.821 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
+2026-10-18 22:48:49.838 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:48:49.919 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:48:49.922 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:48:49.922 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:48:49.923 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:48:49.928 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:48:49.929 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:48:49.930 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:48:49.930 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:48:50.059 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.232s)
+2026-10-18 22:48:50.076 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
+2026-10-18 22:48:50.085 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:48:50.089 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+2026-10-18 22:48:50.098 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-18 22:48:50.104 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 41 of 88M
+2026-10-18 22:48:50.262 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2026-10-18 22:48:50.543 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-18 22:48:50.793 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
+2026-10-18 22:48:50.801 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2026-10-18 22:48:52.222 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-18 22:48:57.390 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-18 22:48:57.399 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:48:58.635 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-18 22:49:01.667 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
+2026-10-18 22:49:02.888 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
+2026-10-18 22:49:03.066 [main] ERROR [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Ошибка соединения с MinIO: java.net.ConnectException: Connection refused: getsockopt
+2026-10-18 22:49:03.071 [main] WARN  [N/A] [N/A] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asyncPhotoProcessingExecutor' defined in file [C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main\ru\startup\skinscan\domain\service\AsyncPhotoProcessingExecutor.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+2026-10-18 22:49:03.072 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:49:03.078 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-18 22:49:03.088 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-18 22:49:03.097 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-10-18 22:49:03.144 [main] INFO  [N/A] [N/A] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-18 22:49:03.202 [main] ERROR [N/A] [N/A] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'asyncPhotoProcessingExecutor' defined in file [C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main\ru\startup\skinscan\domain\service\AsyncPhotoProcessingExecutor.class]: Unsatisfied dependency expressed through constructor parameter 2: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:794)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:236)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:558)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:739)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:441)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1316)
+	at ru.startup.skinscan.Main.main(Main.java:11)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'minioFileStorageService': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1760)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:903)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	... 19 common frames omitted
+Caused by: ru.startup.skinscan.exception.StorageException: null
+	at ru.startup.skinscan.domain.service.MinioFileStorageService.init(MinioFileStorageService.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
+	... 32 common frames omitted
+2026-10-18 22:51:25.106 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-10-18 22:51:25.166 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 107456 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
+2026-10-18 22:51:25.168 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
+2026-10-18 22:51:27.258 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-18 22:51:27.471 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 186 ms. Found 3 JPA repository interfaces.
+2026-10-18 22:51:30.355 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-10-18 22:51:30.407 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-18 22:51:30.414 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-18 22:51:30.416 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-10-18 22:51:31.045 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-18 22:51:31.046 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5807 ms
+2026-10-18 22:51:31.095 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
+2026-10-18 22:51:32.247 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2026-10-18 22:51:32.249 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:51:32.250 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2026-10-18 22:51:32.254 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2026-10-18 22:51:32.257 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:51:32.260 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
+2026-10-18 22:51:32.271 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
+2026-10-18 22:51:32.272 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
+2026-10-18 22:51:32.289 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
+2026-10-18 22:51:32.292 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
+2026-10-18 22:51:32.294 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
+2026-10-18 22:51:32.296 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
+2026-10-18 22:51:32.297 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2026-10-18 22:51:32.326 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
+2026-10-18 22:51:32.439 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-18 22:51:33.482 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f3bd37f
+2026-10-18 22:51:33.496 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-18 22:51:33.673 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
+2026-10-18 22:51:33.677 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
+2026-10-18 22:51:33.680 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
+2026-10-18 22:51:33.798 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
+2026-10-18 22:51:33.800 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
+2026-10-18 22:51:33.801 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
+2026-10-18 22:51:33.802 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
+2026-10-18 22:51:33.803 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
+2026-10-18 22:51:33.810 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2026-10-18 22:51:33.812 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2026-10-18 22:51:33.839 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-10-18 22:51:33.842 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2026-10-18 22:51:33.862 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
+2026-10-18 22:51:33.870 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:51:33.938 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:51:33.938 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:51:33.938 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:51:33.939 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:51:33.941 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:51:33.942 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:51:33.943 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:51:33.943 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:51:34.055 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.192s)
+2026-10-18 22:51:34.059 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
+2026-10-18 22:51:34.075 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:51:34.079 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+2026-10-18 22:51:34.086 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-18 22:51:34.096 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 48 of 88M
+2026-10-18 22:51:34.358 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2026-10-18 22:51:34.571 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-18 22:51:35.047 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
+2026-10-18 22:51:35.073 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2026-10-18 22:51:38.646 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-18 22:51:44.397 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-18 22:51:44.408 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:51:45.015 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-18 22:51:46.956 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
+2026-10-18 22:51:47.695 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
+2026-10-18 22:51:47.875 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тест MinIO прошел успешно
+2026-10-18 22:51:47.884 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Создаем бакет: myapp-photos
+2026-10-18 22:51:48.085 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Бакет создан: myapp-photos
+2026-10-18 22:51:48.232 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Политика бакета: public-read
+2026-10-18 22:51:48.232 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий успешно завершена
+2026-10-18 22:51:48.401 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Photo Task Executor запущен: базовое кол-во потоков=5, максимальное кол-во потоков=10, размер очереди ожидания=100
+2026-10-18 22:51:48.409 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Recovery Task Executor запущен
+2026-10-18 22:51:48.892 [main] WARN  [N/A] [N/A] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-18 22:51:49.027 [main] DEBUG [N/A] [N/A] o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-10-18 22:51:49.835 [main] INFO  [N/A] [N/A] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c586bb6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@503eac4c, org.springframework.security.web.context.SecurityContextHolderFilter@71c45428, org.springframework.security.web.header.HeaderWriterFilter@4bb747c1, org.springframework.web.filter.CorsFilter@1eaf95d2, org.springframework.security.web.authentication.logout.LogoutFilter@3f040f9e, ru.startup.skinscan.security.filter.RateLimiterFilter@5e8359da, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3c9e169f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c7fb24c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@191d69a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2836374, org.springframework.security.web.session.SessionManagementFilter@4e22fdc0, org.springframework.security.web.access.ExceptionTranslationFilter@2c5157c9, org.springframework.security.web.access.intercept.AuthorizationFilter@2f0dae44]
+2026-10-18 22:51:51.133 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-10-18 22:51:51.287 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-10-18 22:51:51.322 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Started Main in 26.976 seconds (process running for 27.88)
+2026-10-18 22:51:51.553 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.created_at,
@@ -102,43 +632,13 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
     where
         p1_0.status=? 
         and p1_0.created_at<cast(? as timestamp(6) with time zone)
-2026-09-02 22:19:40.616 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
-    select
-        p1_0.id,
-        p1_0.created_at,
-        p1_0.file_name,
-        p1_0.file_size_bytes,
-        p1_0.mime_type,
-        p1_0.status,
-        p1_0.storage_file_path,
-        p1_0.updated_at,
-        p1_0.user_id 
-    from
-        photo p1_0 
-    where
-        p1_0.status=? 
-        and p1_0.created_at<cast(? as timestamp(6) with time zone)
-2026-09-02 22:21:40.635 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
-    select
-        p1_0.id,
-        p1_0.created_at,
-        p1_0.file_name,
-        p1_0.file_size_bytes,
-        p1_0.mime_type,
-        p1_0.status,
-        p1_0.storage_file_path,
-        p1_0.updated_at,
-        p1_0.user_id 
-    from
-        photo p1_0 
-    where
-        p1_0.status=? 
-        and p1_0.created_at<cast(? as timestamp(6) with time zone)
-2026-09-02 22:23:28.415 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-02 22:23:28.415 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-02 22:23:28.415 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
-2026-09-02 22:23:28.433 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/photos
-2026-09-02 22:23:28.465 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:52:08.618 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-18 22:52:08.618 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-18 22:52:08.623 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-10-18 22:52:08.678 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/login?auth=QW5kcmV5NTAwOnVzZXI1MDA=
+2026-10-18 22:52:08.713 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-10-18 22:52:08.719 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/login?auth=QW5kcmV5NTAwOnVzZXI1MDA=
+2026-10-18 22:52:08.811 [http-nio-8080-exec-1] DEBUG [90a907a9-0359-403c-9813-020a4d9e2608] [NO_SESSION] org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -151,15 +651,33 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:23:29.243 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:52:54.685 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/login?auth=QW5kcmV5NDAwOnVzZXI0MDA=
+2026-10-18 22:52:54.686 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-10-18 22:52:54.686 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/login?auth=QW5kcmV5NDAwOnVzZXI0MDA=
+2026-10-18 22:52:54.688 [http-nio-8080-exec-2] DEBUG [f220998c-ad00-4cfc-be19-5cdf30b7e614] [NO_SESSION] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.login,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:52:55.288 [http-nio-8080-exec-2] DEBUG [f220998c-ad00-4cfc-be19-5cdf30b7e614] [NO_SESSION] org.hibernate.SQL - 
     select
         u1_0.id 
     from
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:23:30.028 [http-nio-8080-exec-1] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Поиск пользователя с логином: Andrey600
-2026-09-02 22:23:30.029 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:53:24.588 [http-nio-8080-exec-3] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/login?auth=QW5kcmV5NDAwOnVzZXI0MDA=
+2026-10-18 22:53:24.591 [http-nio-8080-exec-3] DEBUG [N/A] [N/A] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-10-18 22:53:24.592 [http-nio-8080-exec-3] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/login?auth=QW5kcmV5NDAwOnVzZXI0MDA=
+2026-10-18 22:53:24.603 [http-nio-8080-exec-3] DEBUG [645ee961-592e-4370-91f9-8153928ed0c9] [NO_SESSION] org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -172,139 +690,30 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:23:30.036 [http-nio-8080-exec-1] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Найден пользователь: Andrey600, пароль: $2a$12$82L1ISHBmtE5Mz8Sna4Kr.OxWw0qFyPc2rdTy8Pr6YSNBBPgoLaiK
-2026-09-02 22:23:31.062 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2026-09-02 22:23:31.064 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=Andrey600, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
-2026-09-02 22:23:31.069 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/photos
-2026-09-02 22:23:31.193 [http-nio-8080-exec-1] DEBUG [9a0ec1e0-ecce-40f5-96a6-aa7e24e7b15c] [NO_SESSION] org.hibernate.SQL - 
+2026-10-18 22:53:25.283 [http-nio-8080-exec-3] DEBUG [645ee961-592e-4370-91f9-8153928ed0c9] [NO_SESSION] org.hibernate.SQL - 
     select
-        p1_0.id,
-        p1_0.created_at,
-        p1_0.file_name,
-        p1_0.file_size_bytes,
-        p1_0.mime_type,
-        p1_0.status,
-        p1_0.storage_file_path,
-        p1_0.updated_at,
-        p1_0.user_id 
+        u1_0.id 
     from
-        photo p1_0 
+        users u1_0 
     where
-        p1_0.user_id=?
-2026-09-02 22:23:31.197 [http-nio-8080-exec-1] INFO  [9a0ec1e0-ecce-40f5-96a6-aa7e24e7b15c] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получены все метаданные фоток пользователя 64641147-39de-45f8-a11f-7f57eb2805dc
-2026-09-02 22:23:31.250 [http-nio-8080-exec-1] DEBUG [9a0ec1e0-ecce-40f5-96a6-aa7e24e7b15c] [NO_SESSION] org.hibernate.SQL - 
+        u1_0.login=?
+2026-10-18 22:53:36.929 [http-nio-8080-exec-4] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/login?auth=QW5kcmV5NTAwOnVzZXI1MDA=
+2026-10-18 22:53:36.930 [http-nio-8080-exec-4] DEBUG [N/A] [N/A] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-10-18 22:53:36.930 [http-nio-8080-exec-4] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/login?auth=QW5kcmV5NTAwOnVzZXI1MDA=
+2026-10-18 22:53:36.932 [http-nio-8080-exec-4] DEBUG [8e6f28ab-70ce-4739-bfa4-9499ca09ddbf] [NO_SESSION] org.hibernate.SQL - 
     select
-        p1_0.id,
-        p1_0.created_at,
-        p1_0.file_name,
-        p1_0.file_size_bytes,
-        p1_0.mime_type,
-        p1_0.status,
-        p1_0.storage_file_path,
-        p1_0.updated_at,
-        p1_0.user_id 
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.login,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at 
     from
-        photo p1_0 
+        users u1_0 
     where
-        p1_0.file_name=? 
-        and p1_0.user_id=?
-2026-09-02 22:23:31.252 [http-nio-8080-exec-1] INFO  [9a0ec1e0-ecce-40f5-96a6-aa7e24e7b15c] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получено id b120816d-b59b-4130-bdfd-8a6cf3e667f8 фото с именем skin3.jpg
-2026-09-02 22:23:31.253 [http-nio-8080-exec-1] INFO  [9a0ec1e0-ecce-40f5-96a6-aa7e24e7b15c] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получены URL для всех фото пользователя 64641147-39de-45f8-a11f-7f57eb2805dc
-2026-09-02 22:23:31.259 [http-nio-8080-exec-1] DEBUG [9a0ec1e0-ecce-40f5-96a6-aa7e24e7b15c] [NO_SESSION] o.s.jdbc.datasource.DataSourceUtils - Setting JDBC Connection [HikariProxyConnection@854145292 wrapping org.postgresql.jdbc.PgConnection@1182413a] read-only
-2026-09-02 22:23:31.269 [http-nio-8080-exec-1] DEBUG [9a0ec1e0-ecce-40f5-96a6-aa7e24e7b15c] [NO_SESSION] o.s.jdbc.datasource.DataSourceUtils - Resetting read-only flag of JDBC Connection [HikariProxyConnection@854145292 wrapping org.postgresql.jdbc.PgConnection@1182413a]
-2026-09-02 22:23:31.269 [http-nio-8080-exec-1] INFO  [9a0ec1e0-ecce-40f5-96a6-aa7e24e7b15c] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Метаданные фото из БД b120816d-b59b-4130-bdfd-8a6cf3e667f8 получены
-2026-09-02 22:23:34.806 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-09-02 22:23:34.810 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-09-02 22:23:34.820 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-09-02 22:26:26.884 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2026-09-02 22:26:26.925 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 10272 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
-2026-09-02 22:26:26.926 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
-2026-09-02 22:26:36.513 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-09-02 22:26:37.272 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 692 ms. Found 3 JPA repository interfaces.
-2026-09-02 22:26:41.983 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2026-09-02 22:26:42.115 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-09-02 22:26:42.130 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-02 22:26:42.132 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
-2026-09-02 22:26:43.023 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-09-02 22:26:43.025 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 16029 ms
-2026-09-02 22:26:43.249 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
-2026-09-02 22:26:44.492 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
-2026-09-02 22:26:44.493 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
-  context: ROOT
-  delegate: true
-----------> Parent Classloader:
-jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
- ...
-2026-09-02 22:26:44.493 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
-2026-09-02 22:26:44.493 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
-2026-09-02 22:26:44.494 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
-  context: ROOT
-  delegate: true
-----------> Parent Classloader:
-jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
- ...
-2026-09-02 22:26:44.497 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
-2026-09-02 22:26:44.504 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
-2026-09-02 22:26:44.506 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
-2026-09-02 22:26:44.517 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
-2026-09-02 22:26:44.518 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
-2026-09-02 22:26:44.519 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
-2026-09-02 22:26:44.520 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
-2026-09-02 22:26:44.521 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
-2026-09-02 22:26:44.537 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
-2026-09-02 22:26:44.550 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-09-02 22:26:45.734 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@482f7af0
-2026-09-02 22:26:45.745 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-09-02 22:26:45.820 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
-2026-09-02 22:26:45.822 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
-2026-09-02 22:26:45.823 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
-2026-09-02 22:26:45.869 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
-2026-09-02 22:26:45.872 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
-2026-09-02 22:26:45.873 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
-2026-09-02 22:26:45.874 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
-2026-09-02 22:26:45.876 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
-2026-09-02 22:26:45.885 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
-2026-09-02 22:26:45.887 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
-2026-09-02 22:26:45.929 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
-2026-09-02 22:26:45.935 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
-2026-09-02 22:26:46.010 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
-2026-09-02 22:26:46.026 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
-2026-09-02 22:26:46.209 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
-2026-09-02 22:26:46.211 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
-2026-09-02 22:26:46.211 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
-2026-09-02 22:26:46.212 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
-2026-09-02 22:26:46.216 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
-2026-09-02 22:26:46.217 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
-2026-09-02 22:26:46.217 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
-2026-09-02 22:26:46.218 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
-2026-09-02 22:26:46.342 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.327s)
-2026-09-02 22:26:46.347 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
-2026-09-02 22:26:46.355 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
-2026-09-02 22:26:46.357 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
-2026-09-02 22:26:46.361 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2026-09-02 22:26:46.366 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 48 of 80M
-2026-09-02 22:26:46.612 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
-2026-09-02 22:26:46.736 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-09-02 22:26:47.022 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
-2026-09-02 22:26:47.030 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
-2026-09-02 22:26:48.494 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-09-02 22:26:55.950 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-09-02 22:26:55.977 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-09-02 22:26:57.284 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-09-02 22:27:01.337 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
-2026-09-02 22:27:02.858 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
-2026-09-02 22:27:03.275 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тест MinIO прошел успешно
-2026-09-02 22:27:03.303 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Бакет уже существует: myapp-photos
-2026-09-02 22:27:03.304 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий успешно завершена
-2026-09-02 22:27:03.755 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Photo Task Executor запущен: базовое кол-во потоков=5, максимальное кол-во потоков=10, размер очереди ожидания=100
-2026-09-02 22:27:03.777 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Recovery Task Executor запущен
-2026-09-02 22:27:04.624 [main] WARN  [N/A] [N/A] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-09-02 22:27:04.711 [main] DEBUG [N/A] [N/A] o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
-2026-09-02 22:27:06.427 [main] INFO  [N/A] [N/A] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58179860, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43e55cfb, org.springframework.security.web.context.SecurityContextHolderFilter@76b5b1e2, org.springframework.security.web.header.HeaderWriterFilter@5498d2a2, org.springframework.web.filter.CorsFilter@582ea857, org.springframework.security.web.authentication.logout.LogoutFilter@2778f3d1, ru.startup.skinscan.security.filter.RateLimiterFilter@4c541b00, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7d1cdebf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fe1a856, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62a193e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@650ee893, org.springframework.security.web.session.SessionManagementFilter@208bde64, org.springframework.security.web.access.ExceptionTranslationFilter@25699129, org.springframework.security.web.access.intercept.AuthorizationFilter@42ae0fcf]
-2026-09-02 22:27:08.069 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-09-02 22:27:08.255 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2026-09-02 22:27:08.350 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Started Main in 42.511 seconds (process running for 43.723)
-2026-09-02 22:27:08.915 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+        u1_0.login=?
+2026-10-18 22:53:51.607 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.created_at,
@@ -320,11 +729,10 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
     where
         p1_0.status=? 
         and p1_0.created_at<cast(? as timestamp(6) with time zone)
-2026-09-02 22:27:14.767 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-02 22:27:14.770 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-02 22:27:14.777 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2026-09-02 22:27:14.892 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/photos
-2026-09-02 22:27:15.123 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:53:58.311 [http-nio-8080-exec-5] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/login?auth=QW5kcmV5NDAwOnVzZXI0MDA=
+2026-10-18 22:53:58.312 [http-nio-8080-exec-5] DEBUG [N/A] [N/A] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-10-18 22:53:58.312 [http-nio-8080-exec-5] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/login?auth=QW5kcmV5NDAwOnVzZXI0MDA=
+2026-10-18 22:53:58.314 [http-nio-8080-exec-5] DEBUG [2200d885-23f5-4238-b501-458433bd68d6] [NO_SESSION] org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -337,15 +745,17 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:27:17.095 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:53:58.982 [http-nio-8080-exec-5] DEBUG [2200d885-23f5-4238-b501-458433bd68d6] [NO_SESSION] org.hibernate.SQL - 
     select
         u1_0.id 
     from
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:27:18.288 [http-nio-8080-exec-1] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Поиск пользователя с логином: Andrey600
-2026-09-02 22:27:18.291 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:55:04.539 [http-nio-8080-exec-7] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/login?auth=QW5kcmV5NjAwOnVzZXI2MDA=
+2026-10-18 22:55:04.540 [http-nio-8080-exec-7] DEBUG [N/A] [N/A] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-10-18 22:55:04.540 [http-nio-8080-exec-7] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/login?auth=QW5kcmV5NjAwOnVzZXI2MDA=
+2026-10-18 22:55:04.542 [http-nio-8080-exec-7] DEBUG [25a22511-f099-4b7b-9db9-ba627c0f74c0] [NO_SESSION] org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -358,139 +768,14 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:27:18.294 [http-nio-8080-exec-1] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Найден пользователь: Andrey600, пароль: $2a$12$82L1ISHBmtE5Mz8Sna4Kr.OxWw0qFyPc2rdTy8Pr6YSNBBPgoLaiK
-2026-09-02 22:27:20.268 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2026-09-02 22:27:20.271 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=Andrey600, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
-2026-09-02 22:27:20.291 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/photos
-2026-09-02 22:27:20.498 [http-nio-8080-exec-1] DEBUG [a84a1aeb-b33c-4516-931b-ef2ea42e8e2a] [NO_SESSION] org.hibernate.SQL - 
+2026-10-18 22:55:04.936 [http-nio-8080-exec-7] DEBUG [25a22511-f099-4b7b-9db9-ba627c0f74c0] [NO_SESSION] org.hibernate.SQL - 
     select
-        p1_0.id,
-        p1_0.created_at,
-        p1_0.file_name,
-        p1_0.file_size_bytes,
-        p1_0.mime_type,
-        p1_0.status,
-        p1_0.storage_file_path,
-        p1_0.updated_at,
-        p1_0.user_id 
+        u1_0.id 
     from
-        photo p1_0 
+        users u1_0 
     where
-        p1_0.user_id=?
-2026-09-02 22:27:20.503 [http-nio-8080-exec-1] INFO  [a84a1aeb-b33c-4516-931b-ef2ea42e8e2a] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получены все метаданные фоток пользователя 64641147-39de-45f8-a11f-7f57eb2805dc
-2026-09-02 22:27:20.553 [http-nio-8080-exec-1] DEBUG [a84a1aeb-b33c-4516-931b-ef2ea42e8e2a] [NO_SESSION] org.hibernate.SQL - 
-    select
-        p1_0.id,
-        p1_0.created_at,
-        p1_0.file_name,
-        p1_0.file_size_bytes,
-        p1_0.mime_type,
-        p1_0.status,
-        p1_0.storage_file_path,
-        p1_0.updated_at,
-        p1_0.user_id 
-    from
-        photo p1_0 
-    where
-        p1_0.file_name=? 
-        and p1_0.user_id=?
-2026-09-02 22:27:20.555 [http-nio-8080-exec-1] INFO  [a84a1aeb-b33c-4516-931b-ef2ea42e8e2a] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получено id b120816d-b59b-4130-bdfd-8a6cf3e667f8 фото с именем skin3.jpg
-2026-09-02 22:27:20.556 [http-nio-8080-exec-1] INFO  [a84a1aeb-b33c-4516-931b-ef2ea42e8e2a] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получены URL для всех фото пользователя 64641147-39de-45f8-a11f-7f57eb2805dc
-2026-09-02 22:27:20.562 [http-nio-8080-exec-1] DEBUG [a84a1aeb-b33c-4516-931b-ef2ea42e8e2a] [NO_SESSION] o.s.jdbc.datasource.DataSourceUtils - Setting JDBC Connection [HikariProxyConnection@1962582007 wrapping org.postgresql.jdbc.PgConnection@482f7af0] read-only
-2026-09-02 22:27:20.573 [http-nio-8080-exec-1] DEBUG [a84a1aeb-b33c-4516-931b-ef2ea42e8e2a] [NO_SESSION] o.s.jdbc.datasource.DataSourceUtils - Resetting read-only flag of JDBC Connection [HikariProxyConnection@1962582007 wrapping org.postgresql.jdbc.PgConnection@482f7af0]
-2026-09-02 22:27:20.573 [http-nio-8080-exec-1] INFO  [a84a1aeb-b33c-4516-931b-ef2ea42e8e2a] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Метаданные фото из БД b120816d-b59b-4130-bdfd-8a6cf3e667f8 получены
-2026-09-02 22:28:35.158 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-09-02 22:28:35.160 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-09-02 22:28:35.165 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-09-02 22:35:53.291 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2026-09-02 22:35:53.335 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 8820 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
-2026-09-02 22:35:53.337 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
-2026-09-02 22:35:55.867 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-09-02 22:35:56.303 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 391 ms. Found 3 JPA repository interfaces.
-2026-09-02 22:35:58.501 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2026-09-02 22:35:58.522 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-09-02 22:35:58.530 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-09-02 22:35:58.531 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
-2026-09-02 22:35:59.218 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2026-09-02 22:35:59.218 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5809 ms
-2026-09-02 22:35:59.265 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
-2026-09-02 22:36:00.455 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
-2026-09-02 22:36:00.455 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
-  context: ROOT
-  delegate: true
-----------> Parent Classloader:
-jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
- ...
-2026-09-02 22:36:00.455 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
-2026-09-02 22:36:00.455 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
-2026-09-02 22:36:00.456 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
-  context: ROOT
-  delegate: true
-----------> Parent Classloader:
-jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
- ...
-2026-09-02 22:36:00.457 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
-2026-09-02 22:36:00.463 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
-2026-09-02 22:36:00.465 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
-2026-09-02 22:36:00.473 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
-2026-09-02 22:36:00.474 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
-2026-09-02 22:36:00.475 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
-2026-09-02 22:36:00.476 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
-2026-09-02 22:36:00.478 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
-2026-09-02 22:36:00.498 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
-2026-09-02 22:36:00.537 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-09-02 22:36:01.299 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@251a90ce
-2026-09-02 22:36:01.313 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-09-02 22:36:01.488 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
-2026-09-02 22:36:01.490 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
-2026-09-02 22:36:01.490 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
-2026-09-02 22:36:01.516 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
-2026-09-02 22:36:01.518 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
-2026-09-02 22:36:01.519 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
-2026-09-02 22:36:01.520 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
-2026-09-02 22:36:01.521 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
-2026-09-02 22:36:01.528 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
-2026-09-02 22:36:01.529 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
-2026-09-02 22:36:01.548 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
-2026-09-02 22:36:01.550 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
-2026-09-02 22:36:01.566 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
-2026-09-02 22:36:01.570 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
-2026-09-02 22:36:01.620 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
-2026-09-02 22:36:01.621 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
-2026-09-02 22:36:01.621 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
-2026-09-02 22:36:01.622 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
-2026-09-02 22:36:01.626 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
-2026-09-02 22:36:01.627 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
-2026-09-02 22:36:01.627 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
-2026-09-02 22:36:01.628 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
-2026-09-02 22:36:01.689 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.122s)
-2026-09-02 22:36:01.693 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
-2026-09-02 22:36:01.707 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
-2026-09-02 22:36:01.715 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
-2026-09-02 22:36:01.728 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
-2026-09-02 22:36:01.737 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 46 of 80M
-2026-09-02 22:36:01.942 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
-2026-09-02 22:36:02.062 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-09-02 22:36:02.395 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
-2026-09-02 22:36:02.411 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
-2026-09-02 22:36:04.514 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-09-02 22:36:10.490 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-09-02 22:36:10.509 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-09-02 22:36:11.867 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-09-02 22:36:15.209 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
-2026-09-02 22:36:16.557 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
-2026-09-02 22:36:16.924 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тест MinIO прошел успешно
-2026-09-02 22:36:16.949 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Бакет уже существует: myapp-photos
-2026-09-02 22:36:16.952 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий успешно завершена
-2026-09-02 22:36:17.359 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Photo Task Executor запущен: базовое кол-во потоков=5, максимальное кол-во потоков=10, размер очереди ожидания=100
-2026-09-02 22:36:17.384 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Recovery Task Executor запущен
-2026-09-02 22:36:18.192 [main] WARN  [N/A] [N/A] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-09-02 22:36:18.320 [main] DEBUG [N/A] [N/A] o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
-2026-09-02 22:36:19.892 [main] INFO  [N/A] [N/A] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d1cdebf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25b7ccfc, org.springframework.security.web.context.SecurityContextHolderFilter@208bde64, org.springframework.security.web.header.HeaderWriterFilter@282c3aa0, org.springframework.web.filter.CorsFilter@56ed6e17, org.springframework.security.web.authentication.logout.LogoutFilter@43aa9ccd, ru.startup.skinscan.security.filter.RateLimiterFilter@529cd3ba, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@40830e1e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@453c10c2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a7e0d68, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58179860, org.springframework.security.web.session.SessionManagementFilter@3253d771, org.springframework.security.web.access.ExceptionTranslationFilter@12bb0322, org.springframework.security.web.access.intercept.AuthorizationFilter@1d3aefd]
-2026-09-02 22:36:22.282 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-09-02 22:36:22.411 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2026-09-02 22:36:22.497 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Started Main in 30.083 seconds (process running for 31.228)
-2026-09-02 22:36:23.136 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+        u1_0.login=?
+2026-10-18 22:55:51.631 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.created_at,
@@ -506,11 +791,8 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
     where
         p1_0.status=? 
         and p1_0.created_at<cast(? as timestamp(6) with time zone)
-2026-09-02 22:37:57.869 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-02 22:37:57.874 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-09-02 22:37:57.884 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
-2026-09-02 22:37:57.981 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/photos
-2026-09-02 22:37:58.194 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:56:36.002 [http-nio-8080-exec-10] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing PUT /skinScan/user/update/Andrey500
+2026-10-18 22:56:36.030 [http-nio-8080-exec-10] DEBUG [N/A] [N/A] org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -523,15 +805,15 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:37:59.862 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:56:36.383 [http-nio-8080-exec-10] DEBUG [N/A] [N/A] org.hibernate.SQL - 
     select
         u1_0.id 
     from
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:38:00.920 [http-nio-8080-exec-1] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Поиск пользователя с логином: Andrey600
-2026-09-02 22:38:00.924 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+2026-10-18 22:56:36.726 [http-nio-8080-exec-10] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Поиск пользователя с логином: Andrey600
+2026-10-18 22:56:36.728 [http-nio-8080-exec-10] DEBUG [N/A] [N/A] org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.created_at,
@@ -544,11 +826,153 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
         users u1_0 
     where
         u1_0.login=?
-2026-09-02 22:38:00.930 [http-nio-8080-exec-1] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Найден пользователь: Andrey600, пароль: $2a$12$82L1ISHBmtE5Mz8Sna4Kr.OxWw0qFyPc2rdTy8Pr6YSNBBPgoLaiK
-2026-09-02 22:38:02.347 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
-2026-09-02 22:38:02.348 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=Andrey600, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
-2026-09-02 22:38:02.356 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/photos
-2026-09-02 22:38:02.448 [http-nio-8080-exec-1] DEBUG [0e2de131-66a4-4542-a310-72ea7c889718] [NO_SESSION] org.hibernate.SQL - 
+2026-10-18 22:56:36.729 [http-nio-8080-exec-10] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Найден пользователь: Andrey600, пароль: $2a$12$82L1ISHBmtE5Mz8Sna4Kr.OxWw0qFyPc2rdTy8Pr6YSNBBPgoLaiK
+2026-10-18 22:56:37.087 [http-nio-8080-exec-10] DEBUG [N/A] [N/A] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-10-18 22:56:37.088 [http-nio-8080-exec-10] DEBUG [N/A] [N/A] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=Andrey600, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
+2026-10-18 22:56:37.088 [http-nio-8080-exec-10] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured PUT /skinScan/user/update/Andrey500
+2026-10-18 22:56:37.148 [http-nio-8080-exec-10] DEBUG [c87c89ca-3825-44ee-8c54-508f3c7c5a75] [NO_SESSION] org.hibernate.SQL - 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:56:37.165 [http-nio-8080-exec-10] DEBUG [c87c89ca-3825-44ee-8c54-508f3c7c5a75] [NO_SESSION] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.login,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2026-10-18 22:56:37.923 [http-nio-8080-exec-10] DEBUG [c87c89ca-3825-44ee-8c54-508f3c7c5a75] [NO_SESSION] org.hibernate.SQL - 
+    update
+        users 
+    set
+        password=?,
+        updated_at=cast(? as timestamp(6) with time zone) 
+    where
+        id=?
+2026-10-18 22:57:00.559 [http-nio-8080-exec-9] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/login?auth=QW5kcmV5NTAwOnVzZXI1MDA=
+2026-10-18 22:57:00.559 [http-nio-8080-exec-9] DEBUG [N/A] [N/A] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-10-18 22:57:00.559 [http-nio-8080-exec-9] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/login?auth=QW5kcmV5NTAwOnVzZXI1MDA=
+2026-10-18 22:57:00.562 [http-nio-8080-exec-9] DEBUG [6742b66c-4642-4c1a-8d58-af86c6099af2] [NO_SESSION] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.login,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:57:00.950 [http-nio-8080-exec-9] DEBUG [6742b66c-4642-4c1a-8d58-af86c6099af2] [NO_SESSION] org.hibernate.SQL - 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:57:07.431 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:57:07.433 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-18 22:57:07.437 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-18 22:57:34.439 [background-preinit] INFO  [N/A] [N/A] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-10-18 22:57:34.476 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Starting Main using Java 21.0.10 with PID 107288 (C:\Users\ferdi\IdeaProjects\SkinScan\build\classes\java\main started by ferdi in C:\Users\ferdi\IdeaProjects\SkinScan)
+2026-10-18 22:57:34.477 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - The following 1 profile is active: "minio"
+2026-10-18 22:57:35.718 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-18 22:57:35.808 [main] INFO  [N/A] [N/A] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2026-10-18 22:57:38.683 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2026-10-18 22:57:38.704 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-18 22:57:38.710 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-18 22:57:38.711 [main] INFO  [N/A] [N/A] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-10-18 22:57:39.423 [main] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-18 22:57:39.426 [main] INFO  [N/A] [N/A] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4898 ms
+2026-10-18 22:57:39.589 [main] INFO  [N/A] [N/A] r.s.s.s.r.RateLimiterInMemory - RateLimiter инициализирован с интервалом очистки: 300с
+2026-10-18 22:57:40.682 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2026-10-18 22:57:40.684 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:57:40.686 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2026-10-18 22:57:40.687 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2026-10-18 22:57:40.688 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ ...
+2026-10-18 22:57:40.690 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/ferdi/IdeaProjects/SkinScan/build/resources/main/db/migration
+2026-10-18 22:57:40.697 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\
+2026-10-18 22:57:40.698 [main] DEBUG [N/A] [N/A] o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\ferdi\IdeaProjects\SkinScan\build\resources\main\db\migration (db/migration)
+2026-10-18 22:57:40.710 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__create_users_table.sql
+2026-10-18 22:57:40.712 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__create_photo_table.sql
+2026-10-18 22:57:40.713 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__create_analysis_table.sql
+2026-10-18 22:57:40.715 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__add_index.sql
+2026-10-18 22:57:40.717 [main] DEBUG [N/A] [N/A] o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2026-10-18 22:57:40.744 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V2__create_photo_table.sql
+2026-10-18 22:57:40.779 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-18 22:57:41.386 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1a785fd5
+2026-10-18 22:57:41.400 [main] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-18 22:57:41.566 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V1__create_users_table.sql
+2026-10-18 22:57:41.569 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V4__add_index.sql
+2026-10-18 22:57:41.571 [main] DEBUG [N/A] [N/A] o.f.c.i.r.ResourceNameValidator - Validating V3__create_analysis_table.sql
+2026-10-18 22:57:41.597 [main] DEBUG [N/A] [N/A] o.f.c.i.d.DatabaseTypeRegister - Multiple databases found that handle url 'jdbc:postgresql://localhost:5432/skinScan': CockroachDB,PostgreSQL
+2026-10-18 22:57:41.599 [main] INFO  [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/skinScan (PostgreSQL 18.1)
+2026-10-18 22:57:41.600 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Database Type: PostgreSQL
+2026-10-18 22:57:41.601 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Driver: PostgreSQL JDBC Driver 42.7.11
+2026-10-18 22:57:41.602 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: true
+2026-10-18 22:57:41.606 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2026-10-18 22:57:41.606 [main] DEBUG [N/A] [N/A] o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2026-10-18 22:57:41.621 [main] WARN  [N/A] [N/A] o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 18.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2026-10-18 22:57:41.622 [main] DEBUG [N/A] [N/A] o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2026-10-18 22:57:41.635 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbValidate - Validating migrations ...
+2026-10-18 22:57:41.638 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:57:41.646 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:57:41.646 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:57:41.646 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:57:41.646 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:57:41.647 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__create_photo_table.sql (filename: V2__create_photo_table.sql)
+2026-10-18 22:57:41.647 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__create_users_table.sql (filename: V1__create_users_table.sql)
+2026-10-18 22:57:41.647 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__add_index.sql (filename: V4__add_index.sql)
+2026-10-18 22:57:41.647 [main] DEBUG [N/A] [N/A] o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__create_analysis_table.sql (filename: V3__create_analysis_table.sql)
+2026-10-18 22:57:41.748 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.111s)
+2026-10-18 22:57:41.751 [main] DEBUG [N/A] [N/A] o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: "public"
+2026-10-18 22:57:41.760 [main] DEBUG [N/A] [N/A] o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2026-10-18 22:57:41.762 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Current version of schema "public": 4
+2026-10-18 22:57:41.765 [main] INFO  [N/A] [N/A] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-10-18 22:57:41.770 [main] DEBUG [N/A] [N/A] org.flywaydb.core.FlywayExecutor - Memory usage: 47 of 84M
+2026-10-18 22:57:41.871 [main] DEBUG [N/A] [N/A] o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2026-10-18 22:57:41.954 [main] INFO  [N/A] [N/A] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-18 22:57:42.107 [main] INFO  [N/A] [N/A] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.25.Final
+2026-10-18 22:57:42.114 [main] INFO  [N/A] [N/A] org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2026-10-18 22:57:43.404 [main] INFO  [N/A] [N/A] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-18 22:57:47.149 [main] INFO  [N/A] [N/A] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-18 22:57:47.176 [main] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:57:47.869 [main] INFO  [N/A] [N/A] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-18 22:57:49.935 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий с: http://localhost:9000, bucket: myapp-photos
+2026-10-18 22:57:50.873 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тестирование соединения с MinIO: http://localhost:9000
+2026-10-18 22:57:51.091 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Тест MinIO прошел успешно
+2026-10-18 22:57:51.100 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Бакет уже существует: myapp-photos
+2026-10-18 22:57:51.102 [main] INFO  [N/A] [N/A] r.s.s.d.s.MinioFileStorageService - Инициализация MinIO хранилища фотографий успешно завершена
+2026-10-18 22:57:51.369 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Photo Task Executor запущен: базовое кол-во потоков=5, максимальное кол-во потоков=10, размер очереди ожидания=100
+2026-10-18 22:57:51.379 [main] INFO  [N/A] [N/A] r.s.skinscan.config.AsyncConfig - Recovery Task Executor запущен
+2026-10-18 22:57:51.939 [main] WARN  [N/A] [N/A] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-18 22:57:51.994 [main] DEBUG [N/A] [N/A] o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2026-10-18 22:57:53.018 [main] INFO  [N/A] [N/A] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@37635407, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33822750, org.springframework.security.web.context.SecurityContextHolderFilter@5f05cd7e, org.springframework.security.web.header.HeaderWriterFilter@7781b55f, org.springframework.web.filter.CorsFilter@25e95d04, org.springframework.security.web.authentication.logout.LogoutFilter@7545cb17, ru.startup.skinscan.security.filter.RateLimiterFilter@3c88db1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@62048ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c6b08a5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@274f51ad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b5dc4bb, org.springframework.security.web.session.SessionManagementFilter@74c74c99, org.springframework.security.web.access.ExceptionTranslationFilter@3d980928, org.springframework.security.web.access.intercept.AuthorizationFilter@6142b9dd]
+2026-10-18 22:57:54.292 [main] INFO  [N/A] [N/A] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-10-18 22:57:54.342 [main] INFO  [N/A] [N/A] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2026-10-18 22:57:54.368 [main] INFO  [N/A] [N/A] ru.startup.skinscan.Main - Started Main in 20.525 seconds (process running for 21.398)
+2026-10-18 22:57:54.572 [scheduling-1] DEBUG [N/A] [N/A] org.hibernate.SQL - 
     select
         p1_0.id,
         p1_0.created_at,
@@ -562,29 +986,80 @@ jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
     from
         photo p1_0 
     where
-        p1_0.user_id=?
-2026-09-02 22:38:02.454 [http-nio-8080-exec-1] INFO  [0e2de131-66a4-4542-a310-72ea7c889718] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получены все метаданные фоток пользователя 64641147-39de-45f8-a11f-7f57eb2805dc
-2026-09-02 22:38:02.528 [http-nio-8080-exec-1] DEBUG [0e2de131-66a4-4542-a310-72ea7c889718] [NO_SESSION] org.hibernate.SQL - 
+        p1_0.status=? 
+        and p1_0.created_at<cast(? as timestamp(6) with time zone)
+2026-10-18 22:58:00.499 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-18 22:58:00.500 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-18 22:58:00.506 [http-nio-8080-exec-1] INFO  [N/A] [N/A] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-10-18 22:58:00.564 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing GET /skinScan/login?auth=QW5kcmV5NTAwOnVzZXI1MDA=
+2026-10-18 22:58:00.590 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-10-18 22:58:00.593 [http-nio-8080-exec-1] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured GET /skinScan/login?auth=QW5kcmV5NTAwOnVzZXI1MDA=
+2026-10-18 22:58:00.662 [http-nio-8080-exec-1] DEBUG [93eded50-08a9-4a8b-bbbe-41f9646c9ca9] [NO_SESSION] org.hibernate.SQL - 
     select
-        p1_0.id,
-        p1_0.created_at,
-        p1_0.file_name,
-        p1_0.file_size_bytes,
-        p1_0.mime_type,
-        p1_0.status,
-        p1_0.storage_file_path,
-        p1_0.updated_at,
-        p1_0.user_id 
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.login,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at 
     from
-        photo p1_0 
+        users u1_0 
     where
-        p1_0.file_name=? 
-        and p1_0.user_id=?
-2026-09-02 22:38:02.540 [http-nio-8080-exec-1] INFO  [0e2de131-66a4-4542-a310-72ea7c889718] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получено id b120816d-b59b-4130-bdfd-8a6cf3e667f8 фото с именем skin3.jpg
-2026-09-02 22:38:02.541 [http-nio-8080-exec-1] INFO  [0e2de131-66a4-4542-a310-72ea7c889718] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Получены URL для всех фото пользователя 64641147-39de-45f8-a11f-7f57eb2805dc
-2026-09-02 22:38:02.554 [http-nio-8080-exec-1] DEBUG [0e2de131-66a4-4542-a310-72ea7c889718] [NO_SESSION] o.s.jdbc.datasource.DataSourceUtils - Setting JDBC Connection [HikariProxyConnection@2072878969 wrapping org.postgresql.jdbc.PgConnection@251a90ce] read-only
-2026-09-02 22:38:02.604 [http-nio-8080-exec-1] DEBUG [0e2de131-66a4-4542-a310-72ea7c889718] [NO_SESSION] o.s.jdbc.datasource.DataSourceUtils - Resetting read-only flag of JDBC Connection [HikariProxyConnection@2072878969 wrapping org.postgresql.jdbc.PgConnection@251a90ce]
-2026-09-02 22:38:02.608 [http-nio-8080-exec-1] INFO  [0e2de131-66a4-4542-a310-72ea7c889718] [NO_SESSION] r.s.s.d.service.PhotoServiceImpl - Метаданные фото из БД b120816d-b59b-4130-bdfd-8a6cf3e667f8 получены
-2026-09-02 22:38:12.225 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-09-02 22:38:12.230 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-09-02 22:38:12.238 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+        u1_0.login=?
+2026-10-18 22:58:01.653 [http-nio-8080-exec-1] DEBUG [93eded50-08a9-4a8b-bbbe-41f9646c9ca9] [NO_SESSION] org.hibernate.SQL - 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:58:14.499 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Securing PUT /skinScan/user/update/Andrey500
+2026-10-18 22:58:14.551 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.login,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:58:15.449 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:58:16.546 [http-nio-8080-exec-2] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Поиск пользователя с логином: Andrey600
+2026-10-18 22:58:16.550 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.login,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:58:16.556 [http-nio-8080-exec-2] INFO  [N/A] [N/A] r.s.s.s.s.CustomUserDetailsService - Найден пользователь: Andrey600, пароль: $2a$12$82L1ISHBmtE5Mz8Sna4Kr.OxWw0qFyPc2rdTy8Pr6YSNBBPgoLaiK
+2026-10-18 22:58:18.399 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] o.s.s.a.d.DaoAuthenticationProvider - Authenticated user
+2026-10-18 22:58:18.401 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] o.s.s.w.a.w.BasicAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=Andrey600, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[]]
+2026-10-18 22:58:18.404 [http-nio-8080-exec-2] DEBUG [N/A] [N/A] o.s.security.web.FilterChainProxy - Secured PUT /skinScan/user/update/Andrey500
+2026-10-18 22:58:18.729 [http-nio-8080-exec-2] DEBUG [e2427ba5-6c56-49d7-b098-04ac7db0d19c] [NO_SESSION] org.hibernate.SQL - 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+2026-10-18 22:58:46.650 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-18 22:58:46.654 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-18 22:58:46.658 [SpringApplicationShutdownHook] INFO  [N/A] [N/A] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
