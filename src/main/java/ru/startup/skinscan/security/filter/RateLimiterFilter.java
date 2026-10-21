@@ -1,5 +1,6 @@
 package ru.startup.skinscan.security.filter;
 
+import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -8,13 +9,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import ru.startup.skinscan.domain.service.AuthService;
-import ru.startup.skinscan.exception.IncorrectPasswordException;
-import ru.startup.skinscan.exception.NotFindUserException;
 import ru.startup.skinscan.security.exception.CustomAuthenticationEntryPoint;
+import ru.startup.skinscan.security.jwt.JwtAuthentication;
+import ru.startup.skinscan.security.jwt.JwtProvider;
+import ru.startup.skinscan.security.jwt.JwtUtil;
 import ru.startup.skinscan.security.rateLimiting.RateLimiter;
 
 import java.io.IOException;
@@ -27,8 +28,12 @@ public class RateLimiterFilter extends OncePerRequestFilter {
 
     private static final Logger log = LoggerFactory.getLogger(RateLimiterFilter.class);
 
+    private static final String AUTH_HEADER = "Authorization";
+    private static final String BEARER_PREFIX = "Bearer ";
+
     private final RateLimiter rateLimiter;
-    private final AuthService authService;
+    private final JwtProvider jwtProvider;
+    private final JwtUtil jwtUtil;
     private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
 
     @Value("${app.rateLimiting.register.limit:5}")
@@ -43,9 +48,10 @@ public class RateLimiterFilter extends OncePerRequestFilter {
     @Value("${app.rateLimiting.login.windowSeconds:60}")
     private long loginWindowSeconds;
 
-    public RateLimiterFilter(RateLimiter rateLimiter, AuthService authService, CustomAuthenticationEntryPoint customAuthenticationEntryPoint) {
+    public RateLimiterFilter(RateLimiter rateLimiter, JwtProvider jwtProvider, JwtUtil jwtUtil, CustomAuthenticationEntryPoint customAuthenticationEntryPoint) {
         this.rateLimiter = rateLimiter;
-        this.authService = authService;
+        this.jwtProvider = jwtProvider;
+        this.jwtUtil = jwtUtil;
         this.customAuthenticationEntryPoint = customAuthenticationEntryPoint;
     }
 
@@ -60,26 +66,39 @@ public class RateLimiterFilter extends OncePerRequestFilter {
 
         // Если не открытые эндпоинты, то читаем заголовок
         if (!isPublicPath(path)) {
-            String header = request.getHeader("Authorization");
+            String header = request.getHeader(AUTH_HEADER);
             if (header == null || header.isEmpty()) {
+                log.warn("AuthFilter: отсутствует или некорректен заголовок Authorization для {}", path);
                 customAuthenticationEntryPoint.commence(request, response, null);
                 return;
             }
-            if (header.startsWith("Basic ")) {
-                header = header.substring(6);
+            if (header.startsWith(BEARER_PREFIX)) {
+                header = header.substring(BEARER_PREFIX.length());
+            }
+            if (!jwtProvider.validateAccessToken(header)) {
+                log.warn("AuthFilter: невалидный access-токен для {}", path);
+                customAuthenticationEntryPoint.commence(request, response, null);
             }
             try {
-                UUID id = authService.validate(header);
-                request.setAttribute("userId", id);
-            } catch (NotFindUserException | IncorrectPasswordException e) {
+                Claims claims = jwtProvider.getClaims(header);
+                JwtAuthentication jwtAuthentication = jwtUtil.createAuthentication(claims, header);
+                UUID userId = (UUID) jwtAuthentication.getPrincipal();
+                request.setAttribute("userId", userId);
+                log.info("Установлен атрибут userId: {} для эндпоинта {}", userId, request.getRequestURI());
+
+                SecurityContextHolder.getContext().setAuthentication(jwtAuthentication);
+                log.debug("AuthFilter: аутентификация установлена для {}", path);
+                log.info("Эндпоинт {} - фильтр пропускает к контроллеру", path);
+            } catch (Exception e) {
+                log.warn("Эндпоинт {} - не прошел аутентификацию, фильтр не пропускает к контроллеру", path);
                 customAuthenticationEntryPoint.commence(request, response, null);
-                return;
             }
         }
 
         // Проверяем, нужно ли применять Rate Limiting к этому запросу
         if (!isRateLimitedPath(path)) {
             filterChain.doFilter(request, response);
+            log.info("После doFilter без Rate Limiting");
             return;
         }
 
@@ -114,8 +133,7 @@ public class RateLimiterFilter extends OncePerRequestFilter {
             // Отправляем JSON-ответ с ошибкой
             response.setContentType("application/json");
             response.getWriter().write(String.format(
-                    "{\"error\":\"Too many requests\",\"message\":\"Rate limit exceeded. Try again in %d seconds.\",\"retryAfter\":%d}",
-                    rateLimiter.getResetTimeSeconds(key),
+                    "{\"Ошибка\":\"Много запросов\",\"сообщение\":\"Лимит скорости превышен. Повторите попытку через %d секунд.\"}",
                     rateLimiter.getResetTimeSeconds(key)
             ));
             return;
@@ -123,6 +141,7 @@ public class RateLimiterFilter extends OncePerRequestFilter {
 
         // Пропускаем запрос дальше
         filterChain.doFilter(request, response);
+        log.info("После doFilter и Rate Limiting");
     }
 
     // Определяем, нужно ли применять Rate Limiting к данному пути
@@ -130,9 +149,9 @@ public class RateLimiterFilter extends OncePerRequestFilter {
         return path.matches("^/skinScan/(register|login).*$");
     }
 
-    // Определяем, нужно ли применять Rate Limiting к данному пути
+    // Определяем, публичные пути
     private boolean isPublicPath(String path) {
-        return path.matches("^/skinScan/(register|login|check-run).*$") ||
+        return path.matches("^/skinScan/(register|login|check-run|refresh-token/*).*$") ||
                 path.matches("^/swagger-ui/*$") ||
                 path.matches("^/docs") ||
                 path.matches("^/v3/api-docs/*$");

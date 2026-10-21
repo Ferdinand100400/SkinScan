@@ -6,11 +6,15 @@ import org.springframework.stereotype.Service;
 import ru.startup.skinscan.datasource.mapper.UserMapper;
 import ru.startup.skinscan.datasource.repository.JpaUserRepository;
 import ru.startup.skinscan.domain.model.User;
+import ru.startup.skinscan.domain.model.role.Role;
+import ru.startup.skinscan.domain.model.role.UserRole;
 import ru.startup.skinscan.exception.IncorrectPasswordException;
 import ru.startup.skinscan.exception.NotFindUserException;
 import ru.startup.skinscan.exception.UserAlreadyExistsException;
 
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -32,8 +36,10 @@ public class UserServiceImpl implements UserService {
         } catch (NotFindUserException e) {
             String encodedPassword = passwordEncoder.encode(user.password());
             user.setPassword(encodedPassword);
-            System.out.println("Пользователь создан!");
-            return userRepo.save(UserMapper.dtoToEntity(user)).id();
+            user.setRoles(List.of(new UserRole(Role.USER)));
+            UUID id = userRepo.save(UserMapper.dtoToEntity(user)).id();
+            System.out.println("Пользователь " + user.login() + " создан!");
+            return id;
         }
     }
 
@@ -49,6 +55,19 @@ public class UserServiceImpl implements UserService {
         return userRepo.findIdByLogin(login)
                 .orElseThrow(() -> new NotFindUserException(login)
         );
+    }
+
+    @Override
+    public User findUserById(UUID userId) {
+        return UserMapper.entityToDto(userRepo.findById(userId)
+                .orElseThrow(() -> new NotFindUserException(userId.toString()))
+        );
+    }
+
+    @Override
+    public OffsetDateTime findCreatedAtById(UUID id) {
+        return userRepo.findCreatedAtById(id)
+                .orElseThrow(() -> new NotFindUserException(id.toString()));
     }
 
     @Override

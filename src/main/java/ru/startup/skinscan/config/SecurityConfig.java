@@ -109,7 +109,9 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/docs",
                                 "/v3/api-docs/**",
-                                "/error"
+                                "/error",
+                                "/skinScan/refresh-token/access",
+                                "/skinScan/refresh-token/refresh"
                         ).permitAll()
 
                         // Эндпоинты для администраторов

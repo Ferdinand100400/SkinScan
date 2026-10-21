@@ -45,9 +45,9 @@ dependencies {
     implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.7.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.3")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.3")
-//    implementation("io.jsonwebtoken:jjwt-api:0.13.0")
-//    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.13.0")
-//    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")
+    implementation("io.jsonwebtoken:jjwt-api:0.13.0")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.13.0")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")
 //    implementation("io.awspring.cloud:spring-cloud-aws-starter")
 }
 

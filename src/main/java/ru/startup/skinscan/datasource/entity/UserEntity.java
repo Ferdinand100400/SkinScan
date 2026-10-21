@@ -1,12 +1,12 @@
 package ru.startup.skinscan.datasource.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Setter;
+import ru.startup.skinscan.domain.model.role.Role;
 
 import java.time.OffsetDateTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -20,6 +20,15 @@ public class UserEntity {
 
     @Setter
     private String password;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id")
+    )
+    @Column(name = "role", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Set<Role> roles = new HashSet<>();
 
     @Setter
     private String email;
@@ -37,18 +46,19 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(UUID id, String login, String password, String email, String phone, OffsetDateTime createdAt, OffsetDateTime updatedAt) {
+    public UserEntity(UUID id, String login, String password, Set<Role> roles, String email, String phone, OffsetDateTime createdAt, OffsetDateTime updatedAt) {
         this.id = id;
         this.login = login;
         this.password = password;
+        this.roles = roles;
         this.email = email;
         this.phone = phone;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
-    public UserEntity(String login, String password, String email, String phone) {
-        this(UUID.randomUUID(), login, password, email, phone, OffsetDateTime.now(), OffsetDateTime.now());
+    public UserEntity(String login, String password, Set<Role> roles, String email, String phone) {
+        this(UUID.randomUUID(), login, password, roles, email, phone, OffsetDateTime.now(), OffsetDateTime.now());
     }
 
     public UUID id() {
@@ -61,6 +71,10 @@ public class UserEntity {
 
     public String password() {
         return password;
+    }
+
+    public Set<Role> roles() {
+        return roles;
     }
 
     public String email() {

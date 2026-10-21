@@ -1,6 +1,5 @@
 package ru.startup.skinscan.web.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +15,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/skinScan/user")
-@Slf4j  // для логов и внедрения фильтра логов
 public class UserControllerImpl implements UserController {
 
     private final UserService userService;

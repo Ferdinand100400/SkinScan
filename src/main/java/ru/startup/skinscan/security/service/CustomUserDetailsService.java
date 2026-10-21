@@ -22,7 +22,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        log.info("Поиск пользователя с логином: {}", login);  // ← добавить
+        log.info("Поиск пользователя с логином: {}", login);
 
         UserEntity user = userRepository.findByLogin(login)
                 .orElseThrow(() -> {

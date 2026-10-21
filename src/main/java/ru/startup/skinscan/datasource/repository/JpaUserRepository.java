@@ -20,6 +20,9 @@ public interface JpaUserRepository extends JpaRepository<UserEntity, UUID> {
     @Query("SELECT u.id FROM UserEntity u WHERE u.login = :login")
     Optional<UUID> findIdByLogin(String login);
 
+    @Query("SELECT u.createdAt FROM UserEntity u WHERE u.id = :id")
+    Optional<OffsetDateTime> findCreatedAtById(UUID id);
+
     @Modifying
     @Query("UPDATE UserEntity u SET u.password = :password, u.email = :email, u.phone = :phone, u.updatedAt = CAST(:update_at AS OffsetDateTime) WHERE u.login = :login")
     int update(
